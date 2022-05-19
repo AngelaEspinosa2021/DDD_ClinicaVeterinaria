@@ -1,2 +1,6 @@
-package co.com.ClinicaVeterinaria.prestacion_de_servicio;public class ServicioId {
+package co.com.ClinicaVeterinaria.prestacion_de_servicio.values;
+
+import co.com.sofka.domain.generic.Identity;
+
+public class ServicioId extends Identity {
 }
