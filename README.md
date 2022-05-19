@@ -1,9 +1,7 @@
 # DDD_ClinicaVeterinaria
 
-## Clona
-Repositorio Front
-```plain
-()
+## Repositorio
+(https://github.com/AngelaEspinosa2021/DDD_ClinicaVeterinaria.git)
 
 ```
 ## Diagramas y modelo
