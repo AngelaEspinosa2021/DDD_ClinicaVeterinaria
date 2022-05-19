@@ -1,7 +1,6 @@
-package co.com.ClinicaVeterinaria.atencion_medica.values;
+package co.com.atencion_al_usuario.atencion_medica.values;
 
 import co.com.sofka.domain.generic.Identity;
-import com.sun.source.tree.IdentifierTree;
 
 public class UrgenciaId extends Identity {
 }

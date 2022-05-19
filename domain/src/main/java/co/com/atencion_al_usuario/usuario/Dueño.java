@@ -1,6 +1,6 @@
-package co.com.ClinicaVeterinaria.usuario;
+package co.com.atencion_al_usuario.usuario;
 
-import co.com.ClinicaVeterinaria.usuario.values.DueñoId;
+import co.com.atencion_al_usuario.usuario.values.DueñoId;
 import co.com.sofka.domain.generic.Entity;
 
 public class Dueño extends Entity<DueñoId> {
