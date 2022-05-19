@@ -6,6 +6,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNaci
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.Entity;
 
+import java.util.Objects;
+
 public class Dueño extends Entity<DueñoId> {
 
     private NombreCompleto nombreCompleto;
@@ -19,6 +21,19 @@ public class Dueño extends Entity<DueñoId> {
         this.datosDeContacto=datosDeContacto;
         this.fechaDeNacimiento=fechaDeNacimiento;
     }
+
+    public void actualizarDatosDeContacto(DatosDeContacto datosDeContacto){
+        this.datosDeContacto=Objects.requireNonNull(datosDeContacto);
+    }
+
+    public void actualizarNombreCompleto(NombreCompleto nombreCompleto){
+        this.nombreCompleto=Objects.requireNonNull(nombreCompleto);
+    }
+
+    public void actualizarFechaDeNacimiento(FechaDeNacimiento fechaDeNacimiento){
+        this.fechaDeNacimiento=Objects.requireNonNull(fechaDeNacimiento);
+    }
+
 
     public NombreCompleto nombreCompleto() {
         return nombreCompleto;
