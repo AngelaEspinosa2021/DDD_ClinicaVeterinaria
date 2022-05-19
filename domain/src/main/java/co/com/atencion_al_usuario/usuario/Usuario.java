@@ -9,8 +9,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Dueño dueño;
     protected Paciente paciente;
 
-
-    public Usuario(UsuarioId entityId) {
-        super(entityId);
+    public Usuario(UsuarioId usuarioId, FechaDeCreacion fechaDeCreacion){
+        super(usuarioId);
     }
 }
