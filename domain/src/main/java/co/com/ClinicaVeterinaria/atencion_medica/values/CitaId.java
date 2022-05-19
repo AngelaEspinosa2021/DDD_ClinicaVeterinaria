@@ -1,2 +1,6 @@
-package co.com.ClinicaVeterinaria.atencion_medica;public class CitaId {
+package co.com.ClinicaVeterinaria.atencion_medica.values;
+
+import co.com.sofka.domain.generic.Identity;
+
+public class CitaId extends Identity {
 }

@@ -1,4 +1,4 @@
-package co.com.ClinicaVeterinaria.atencion_medica;
+package co.com.ClinicaVeterinaria.atencion_medica.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

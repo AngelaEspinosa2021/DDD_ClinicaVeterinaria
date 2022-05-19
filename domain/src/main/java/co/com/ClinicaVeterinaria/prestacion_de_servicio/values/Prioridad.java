@@ -15,7 +15,7 @@ public class Prioridad implements ValueObject<Prioridad.Prioridades> {
 
     @Override
     public Prioridades value() {
-        return null;
+        return value;
     }
 
     public enum Prioridades{
