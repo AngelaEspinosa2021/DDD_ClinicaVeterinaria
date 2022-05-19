@@ -1,8 +1,8 @@
-package co.com.atencion_al_usuario.usuario;
+package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
-import co.com.atencion_al_usuario.usuario.events.UsuarioCreado;
-import co.com.atencion_al_usuario.usuario.values.FechaDeCreacion;
-import co.com.atencion_al_usuario.usuario.values.UsuarioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.FechaDeCreacion;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.sofka.domain.generic.AggregateEvent;
 
 public class Usuario extends AggregateEvent<UsuarioId> {

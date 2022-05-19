@@ -1,8 +1,8 @@
-package co.com.atencion_al_usuario.prestacion_de_servicio;
+package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
-import co.com.atencion_al_usuario.prestacion_de_servicio.values.FechaDeSolicitud;
-import co.com.atencion_al_usuario.prestacion_de_servicio.values.Prioridad;
-import co.com.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.FechaDeSolicitud;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Prioridad;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
 import co.com.sofka.domain.generic.AggregateEvent;
 
 import java.util.Set;
