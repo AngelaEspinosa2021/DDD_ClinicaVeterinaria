@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ActualizarNombreCompletoDePaciente extends Command {
 
-    private PacienteId pacienteId;
-    private NombreCompleto nombreCompleto;
+    private final PacienteId pacienteId;
+    private final NombreCompleto nombreCompleto;
 
     public ActualizarNombreCompletoDePaciente(PacienteId pacienteId, NombreCompleto nombreCompleto) {
         this.pacienteId = pacienteId;

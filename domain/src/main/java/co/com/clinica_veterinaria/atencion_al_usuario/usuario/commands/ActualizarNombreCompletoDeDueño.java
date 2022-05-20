@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ActualizarNombreCompletoDeDueño extends Command {
 
-    private DueñoId dueñoId;
-    private NombreCompleto nombreCompleto;
+    private final DueñoId dueñoId;
+    private final NombreCompleto nombreCompleto;
 
     public ActualizarNombreCompletoDeDueño(DueñoId dueñoId, NombreCompleto nombreCompleto) {
         this.dueñoId = dueñoId;

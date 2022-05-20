@@ -6,9 +6,9 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearHistoriaMedica extends Command {
-    private HistoriaMedicaId historiaMedicaId;
-    private Fecha fecha;
-    private Descripcion descripcion;
+    private final HistoriaMedicaId historiaMedicaId;
+    private final Fecha fecha;
+    private final Descripcion descripcion;
 
     public CrearHistoriaMedica(HistoriaMedicaId historiaMedicaId, Fecha fecha, Descripcion descripcion) {
         this.historiaMedicaId = historiaMedicaId;

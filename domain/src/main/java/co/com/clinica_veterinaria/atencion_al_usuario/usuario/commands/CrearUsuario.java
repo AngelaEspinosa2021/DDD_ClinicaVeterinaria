@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Command;
 
 public class CrearUsuario extends Command {
 
-    private Fecha fechaDeCreacion;
+    private final Fecha fechaDeCreacion;
 
     public CrearUsuario(Fecha fechaDeCreacion) {
         this.fechaDeCreacion = fechaDeCreacion;

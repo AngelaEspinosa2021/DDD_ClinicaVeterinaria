@@ -7,10 +7,10 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Command;
 
 public class SolicitarHospitalizacion extends Command {
-    private ServicioId servicioId;
-    private HospitalizacionId hospitalizacionId;
-    private EstadoDeHospitalizacion estadoDeHospitalizacion;
-    private Fecha fechaDeIngreso;
+    private final ServicioId servicioId;
+    private final HospitalizacionId hospitalizacionId;
+    private final EstadoDeHospitalizacion estadoDeHospitalizacion;
+    private final Fecha fechaDeIngreso;
 
     public SolicitarHospitalizacion(ServicioId servicioId, HospitalizacionId hospitalizacionId, EstadoDeHospitalizacion estadoDeHospitalizacion, Fecha fechaDeIngreso) {
         this.servicioId = servicioId;

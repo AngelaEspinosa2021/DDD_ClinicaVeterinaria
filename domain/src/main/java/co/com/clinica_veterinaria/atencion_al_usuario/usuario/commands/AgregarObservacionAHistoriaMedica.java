@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class AgregarObservacionAHistoriaMedica extends Command {
 
-    private HistoriaMedicaId historiaMedicaId;
-    private Observacion observacion;
+    private final HistoriaMedicaId historiaMedicaId;
+    private final Observacion observacion;
 
     public AgregarObservacionAHistoriaMedica(HistoriaMedicaId historiaMedicaId, Observacion observacion) {
         this.historiaMedicaId = historiaMedicaId;

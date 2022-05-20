@@ -6,9 +6,9 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompl
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarPaciente extends Command {
-    private PacienteId pacienteId;
-    private NombreCompleto nombreCompleto;
-    private Fecha fechaDeNacimiento;
+    private final PacienteId pacienteId;
+    private final NombreCompleto nombreCompleto;
+    private final Fecha fechaDeNacimiento;
 
     public AgregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, Fecha fechaDeNacimiento) {
         this.pacienteId = pacienteId;

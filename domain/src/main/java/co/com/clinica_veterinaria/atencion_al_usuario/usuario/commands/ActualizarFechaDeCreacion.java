@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.Command;
 
 public class ActualizarFechaDeCreacion extends Command {
 
-    private Fecha fechaDeCreacion;
+    private final Fecha fechaDeCreacion;
 
     public ActualizarFechaDeCreacion(Fecha fechaDeCreacion) {
         this.fechaDeCreacion = fechaDeCreacion;

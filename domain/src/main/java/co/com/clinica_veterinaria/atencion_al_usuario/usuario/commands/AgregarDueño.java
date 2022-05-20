@@ -8,10 +8,10 @@ import co.com.sofka.domain.generic.Command;
 
 public class AgregarDueño extends Command {
 
-    private DueñoId dueñoId;
-    private NombreCompleto nombreCompleto;
-    private DatosDeContacto datosDeContacto;
-    private Fecha fechaDeNacimiento;
+    private final DueñoId dueñoId;
+    private final NombreCompleto nombreCompleto;
+    private final DatosDeContacto datosDeContacto;
+    private final Fecha fechaDeNacimiento;
 
     public AgregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento) {
         this.dueñoId = dueñoId;

@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ActualizarDatosDeContactoDeDueño extends Command {
 
-    private DueñoId dueñoId;
-    private DatosDeContacto datosDeContacto;
+    private final DueñoId dueñoId;
+    private final DatosDeContacto datosDeContacto;
 
     public ActualizarDatosDeContactoDeDueño(DueñoId dueñoId, DatosDeContacto datosDeContacto) {
         this.dueñoId = dueñoId;

@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ActualizarDescripcionDeHistoriaMedica extends Command {
 
-    private HistoriaMedicaId historiaMedicaId;
-    private Descripcion descripcion;
+    private final HistoriaMedicaId historiaMedicaId;
+    private final Descripcion descripcion;
 
     public ActualizarDescripcionDeHistoriaMedica(HistoriaMedicaId historiaMedicaId, Descripcion descripcion) {
         this.historiaMedicaId = historiaMedicaId;
