@@ -9,7 +9,7 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
 
     private Fecha fecha;
     private Descripcion descripcion;
-    private NombreDelMedico nombreDelMedico;
+    private InformacionDeMedico informacionDelMedico;
     private TipoAtencion tipoAtencion;
     private List<Observacion> observaciones;
 
@@ -19,12 +19,8 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
         this.descripcion=descripcion;
     }
 
-    public void asociarMedico(NombreDelMedico nombreDelMedico){
-        this.nombreDelMedico=nombreDelMedico;
-    }
-
-    public void actualizarTipoAtencion(TipoAtencion tipoAtencion){
-        this.tipoAtencion=tipoAtencion;
+    public void asociarMedico(InformacionDeMedico informacionDelMedico){
+        this.informacionDelMedico=informacionDelMedico;
     }
 
     public void agregarObservacion(Observacion observacion){
@@ -43,8 +39,8 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
         return descripcion;
     }
 
-    public NombreDelMedico nombreDelMedico() {
-        return nombreDelMedico;
+    public InformacionDeMedico informacionDelMedico() {
+        return informacionDelMedico;
     }
 
     public TipoAtencion tipoAtencion() {

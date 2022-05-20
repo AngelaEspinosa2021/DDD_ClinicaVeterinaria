@@ -1,10 +1,7 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.DueñoCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.FechaDeCreacion;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
@@ -26,4 +23,42 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     public void agregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, FechaDeNacimiento fechaDeNacimiento){
         appendChange(new DueñoCreado(dueñoId,nombreCompleto,datosDeContacto,fechaDeNacimiento)).apply();
     }
+
+    public void agregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, FechaDeNacimiento fechaDeNacimiento){
+        appendChange( new PacienteCreado(pacienteId,nombreCompleto,fechaDeNacimiento)).apply();
+    }
+
+    public void crearHistoriaMedica(HistoriaMedicaId historiaMedicaId, Fecha fecha, Descripcion descripcion){
+        appendChange( new HistoriaMedicaCreada(historiaMedicaId,fecha,descripcion));
+    }
+
+    public void actualizarFechaDeCreacion(FechaDeCreacion fechaDeCreacion){
+        appendChange( new FechaDeCreacionActualizada(fechaDeCreacion)).apply();
+    }
+
+    public void actualizarDescripcionDeHistoriaMedica(HistoriaMedicaId historiaMedicaId, Descripcion descripcion){
+        appendChange(new DescripcionDeHistoriaMedicaActualizada(historiaMedicaId,descripcion)).apply();
+    }
+
+    public void asociarMedicoAHistoriaMedica(HistoriaMedicaId historiaMedicaId, InformacionDeMedico informacionDeMedico){
+        appendChange(new MedicoDeHistoriaMedicaAsociado(historiaMedicaId,informacionDeMedico)).apply();
+    }
+
+    public void actualizarNombreCompletoDePaciente(PacienteId pacienteId, NombreCompleto nombreCompleto){
+        appendChange( new NombreCompletoPacienteActualizado(pacienteId,nombreCompleto)).apply();
+    }
+
+    public void datosDeContactoDeDueño(DueñoId dueñoId, DatosDeContacto datosDeContacto){
+        appendChange(new DatosDeContactoDeDueñoActualizados(dueñoId,datosDeContacto)).apply();
+    }
+
+    public void actualizarNombreCompletoDeDueño(DueñoId dueñoId, NombreCompleto nombreCompleto){
+        appendChange(new NombreCompletoDeDueñoActualizado(dueñoId,nombreCompleto)).apply();
+    }
+
+    public void agregarObservacionAHistoriaMedica(HistoriaMedicaId historiaMedicaId, Observacion observacion){
+        appendChange(new ObservacionDeHistoriaMedicaAgregada(historiaMedicaId,observacion)).apply();
+    }
+
+
 }
