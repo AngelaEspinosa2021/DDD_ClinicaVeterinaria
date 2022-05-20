@@ -8,11 +8,11 @@ public class PacienteId extends Identity {
 
     }
 
-    private PacienteId(String id){
+    public PacienteId(String id){
         super(id);
     }
 
-    private static PacienteId of(String id){
+    public static PacienteId of(String id){
         return new PacienteId(id);
     }
 }
