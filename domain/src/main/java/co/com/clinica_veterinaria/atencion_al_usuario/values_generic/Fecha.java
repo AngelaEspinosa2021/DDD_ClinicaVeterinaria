@@ -1,32 +1,32 @@
-package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values;
+package co.com.clinica_veterinaria.atencion_al_usuario.values_generic;
 
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class FechaDeIngreso implements ValueObject<LocalDate> {
+public class Fecha implements ValueObject<LocalDate> {
     private final LocalDate value;
 
-    public FechaDeIngreso(LocalDate value) {
+    public Fecha(LocalDate value) {
         this.value = Objects.requireNonNull(value);
+    }
+
+    @Override
+    public LocalDate value() {
+        return value;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FechaDeIngreso)) return false;
-        FechaDeIngreso that = (FechaDeIngreso) o;
+        if (!(o instanceof Fecha)) return false;
+        Fecha that = (Fecha) o;
         return Objects.equals(value, that.value);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(value);
-    }
-
-    @Override
-    public LocalDate value() {
-        return null;
     }
 }
