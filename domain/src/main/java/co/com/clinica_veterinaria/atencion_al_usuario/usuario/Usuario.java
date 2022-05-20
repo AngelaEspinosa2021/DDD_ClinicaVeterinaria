@@ -1,5 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.DueñoCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.FechaDeCreacion;
@@ -8,8 +9,6 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeCont
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.AggregateEvent;
-
-import java.util.Objects;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
     protected FechaDeCreacion fechaDeCreacion;
