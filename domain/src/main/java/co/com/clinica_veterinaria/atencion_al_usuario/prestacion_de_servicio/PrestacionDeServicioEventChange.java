@@ -61,5 +61,9 @@ public class PrestacionDeServicioEventChange extends EventChange {
                     .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de examen medico"));
             funcion.actualizarResultados(event.getResultados());
         });
+
+        apply((ObservacionDeHospitalizacionAgregada event)->{
+            prestacionDeServicio.hospitalizacion.agregarObservacion(event.getObservacion());
+        });
     }
 }

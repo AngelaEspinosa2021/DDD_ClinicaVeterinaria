@@ -4,6 +4,7 @@ import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.eve
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -69,6 +70,10 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
 
     public void actualizarFechaDeAltaDeHospitalizacion(HospitalizacionId hospitalizacionId, Fecha fechaDeAlta){
         appendChange( new FechaDeAltaDeHospitalizacionActualizada(hospitalizacionId,fechaDeAlta)).apply();
+    }
+
+    public void agregarObservacionDeHospitalizacion(HospitalizacionId hospitalizacionId, Observacion observacion){
+        appendChange( new ObservacionDeHospitalizacionAgregada(hospitalizacionId,observacion)).apply();
     }
 
     protected Optional<Medicamento> getMedicamentoById(MedicamentoId medicamentoId){

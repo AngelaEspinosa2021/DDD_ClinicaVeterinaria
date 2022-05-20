@@ -1,6 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
-import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.AtencionCreada;
+import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.PrestacionDeServicioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Prioridad;
@@ -70,14 +70,6 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
 
     public void solicitarPrestacionDeServicio(ServicioId servicioId, Prioridad prioridad, Fecha fechaDeSolicitud){
         appendChange(new PrestacionDeServicioSolicitado(servicioId,prioridad,fechaDeSolicitud)).apply();
-    }
-
-    public void solicitarAtencionDeUrgencias(ServicioId servicioId,UrgenciaId urgenciaId,Observacion observacion,Triage triage){
-        appendChange(new AtencionDeUrgenciasSolicitada(servicioId,urgenciaId,observacion,triage)).apply();
-    }
-
-    public void solicitarAtencionDeCitaProgramada(ServicioId servicioId,CitaId CitaId, Observacion observacion,FechaCita fechaCita){
-        appendChange( new AtencionDeCitaProgramadaSolicitada(servicioId,CitaId,observacion,fechaCita)).apply();
     }
 
 
