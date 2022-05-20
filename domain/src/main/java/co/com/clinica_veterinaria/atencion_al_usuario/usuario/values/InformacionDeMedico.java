@@ -4,12 +4,12 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class NombreDelMedico implements ValueObject<NombreDelMedico.Props> {
+public class InformacionDeMedico implements ValueObject<InformacionDeMedico.Props> {
 
     private String medicoId;
     private String nombreCompleto;
 
-    public NombreDelMedico(String medicoId, String nombreCompleto){
+    public InformacionDeMedico(String medicoId, String nombreCompleto){
         this.medicoId= Objects.requireNonNull(medicoId);
         if(this.medicoId.isBlank()){
             new IllegalArgumentException("El identificador Del Médico no puede estar vacio.");
@@ -43,8 +43,8 @@ public class NombreDelMedico implements ValueObject<NombreDelMedico.Props> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof NombreDelMedico)) return false;
-        NombreDelMedico that = (NombreDelMedico) o;
+        if (!(o instanceof InformacionDeMedico)) return false;
+        InformacionDeMedico that = (InformacionDeMedico) o;
         return Objects.equals(medicoId, that.medicoId) && Objects.equals(nombreCompleto, that.nombreCompleto);
     }
 
