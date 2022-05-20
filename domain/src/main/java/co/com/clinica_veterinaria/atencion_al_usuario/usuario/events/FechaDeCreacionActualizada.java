@@ -4,7 +4,14 @@ import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.FechaDeCrea
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class FechaDeCreacionActualizada extends DomainEvent {
+    private FechaDeCreacion fechaDeCreacio;
+
     public FechaDeCreacionActualizada(FechaDeCreacion fechaDeCreacio) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.FechaDeCreacionActualizada");
+        this.fechaDeCreacio = fechaDeCreacio;
+    }
+
+    public FechaDeCreacion getFechaDeCreacio() {
+        return fechaDeCreacio;
     }
 }
