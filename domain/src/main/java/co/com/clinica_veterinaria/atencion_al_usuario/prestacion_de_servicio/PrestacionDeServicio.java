@@ -36,12 +36,12 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         return prestacionDeServicio;
     }
 
-    public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Resultados resultados, Estado estado){
-        appendChange( new ExamenDeLaborarioSolicitado(examenId,nombre,fechaRealizacion,resultados,estado)).apply();
+    public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre,Estado estado){
+        appendChange(new ExamenDeLaborarioSolicitado(examenId,nombre,estado)).apply();
     }
 
-    public void agregarMedicamento(MedicamentoId medicamentoId, Nombre nombre, Fecha fechaDeVencimiento){
-        appendChange( new MedicamentoAgregado(medicamentoId,nombre,fechaDeVencimiento)).apply();
+    public void agregarMedicamento(MedicamentoId medicamentoId, Nombre nombre){
+        appendChange( new MedicamentoAgregado(medicamentoId,nombre)).apply();
     }
 
     public void solicitarHospitalizacion(HospitalizacionId hospitalizacionId,EstadoDeHospitalizacion estadoDeHospitalizacion,Fecha fechaDeIngreso){

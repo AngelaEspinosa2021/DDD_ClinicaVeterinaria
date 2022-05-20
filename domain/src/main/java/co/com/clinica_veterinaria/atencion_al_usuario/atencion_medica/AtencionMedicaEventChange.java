@@ -15,7 +15,6 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.fechaDeAtencion=event.getFechaDeAtencion();
             atencionMedica.tipoDeAtencion=event.getTipoDeAtencion();
             atencionMedica.estado=event.getEstado();
-            atencionMedica.servicios=new HashSet<>();
         });
 
         apply((MedicoAgregado event)->{
@@ -42,9 +41,9 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.citaProgramada.fechaCita=event.getFechaCita();
         });
 
-        /*apply((HistoriaMedicaDeUsuarioAgregada event)->{
-            atencionMedica.usuarioId = new HistoriaMedica(event.getUsuarioId(),event.getHistoriaMedicaId(),event.getFecha(),event.getDescripcion());
-        });*/
+        apply((ObservacionDeHistoriaMedicaDeUsuarioAgregada event)->{
+            atencionMedica.usuario.agregarObservacionAHistoriaMedica(event.getHistoriaMedicaId(),event.getObservacion());
+        });
 
         apply((NombreDeMedicoActualizado event)->{
             atencionMedica.medico.actualizarNombreCompleto(event.getNombreCompleto());
@@ -61,10 +60,17 @@ public class AtencionMedicaEventChange extends EventChange {
         apply((EstadoDeAtencionActualizado event)->{
             atencionMedica.actualizarEstadoDeAtencion(event.getEstado());
         });
-        /*
-        apply((PrestacionDeServicioSolicitado event)->{
-            atencionMedica.
-        });*/
 
+        apply((ServicioDeExamenDeLaboratorioSolicitado event)->{
+            atencionMedica.prestacionDeServicio.solicitarExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstado());
+        });
+
+        apply((ServicioDeHospitalizacionSolicitado event)->{
+            atencionMedica.prestacionDeServicio.solicitarHospitalizacion(event.getHospitalizacionId(), event.getEstadoDeHospitalizacion(),event.getFechaDeIngreso());
+        });
+
+        apply((ServicioDeMedicamentoSolicitado event)->{
+           atencionMedica.prestacionDeServicio.agregarMedicamento(event.getMedicamentoId(), event.getNombre());
+        });
     }
 }

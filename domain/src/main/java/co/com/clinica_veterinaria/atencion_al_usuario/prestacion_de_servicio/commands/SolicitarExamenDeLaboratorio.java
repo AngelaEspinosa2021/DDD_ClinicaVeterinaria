@@ -11,14 +11,12 @@ public class SolicitarExamenDeLaboratorio extends Command {
     private final ExamenId examenId;
     private final Nombre nombre;
     private final Fecha fechaRealizacion;
-    private final Resultados resultados;
-    private final Estado estado;
+   private final Estado estado;
 
-    public SolicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Resultados resultados, Estado estado) {
+    public SolicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Estado estado) {
         this.examenId = examenId;
         this.nombre = nombre;
         this.fechaRealizacion = fechaRealizacion;
-        this.resultados = resultados;
         this.estado = estado;
     }
 
@@ -32,10 +30,6 @@ public class SolicitarExamenDeLaboratorio extends Command {
 
     public Fecha getFechaRealizacion() {
         return fechaRealizacion;
-    }
-
-    public Resultados getResultados() {
-        return resultados;
     }
 
     public Estado getEstado() {

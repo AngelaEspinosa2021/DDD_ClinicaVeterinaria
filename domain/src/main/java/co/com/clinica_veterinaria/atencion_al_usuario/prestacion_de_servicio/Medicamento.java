@@ -9,25 +9,17 @@ public class Medicamento extends Entity<MedicamentoId> {
     protected Nombre nombre;
     protected Fecha fechaDeVencimiento;
 
-    public Medicamento(MedicamentoId medicamentoId,Nombre nombre,Fecha fechaDeVencimiento){
+    public Medicamento(MedicamentoId medicamentoId, Nombre nombre) {
         super(medicamentoId);
         this.nombre = nombre;
-        this.fechaDeVencimiento = fechaDeVencimiento;
     }
 
-    public void actualizarNombre(Nombre nombre){
-        this.nombre=nombre;
-    }
-
-    public void actualizarFechaDeVencimiento(Fecha fechaDeVencimiento){
-        this.fechaDeVencimiento=fechaDeVencimiento;
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
     }
 
     public Nombre nombre() {
         return nombre;
     }
 
-    public Fecha fechaDeVencimiento() {
-        return fechaDeVencimiento;
-    }
 }

@@ -15,11 +15,9 @@ public class ExamenDeLaboratorio extends Entity<ExamenId> {
     protected Resultados resultados;
     protected Estado estado;
 
-    public ExamenDeLaboratorio(ExamenId examenId,Nombre nombre,Fecha fechaRealizacion,Resultados resultados,Estado estado) {
+    public ExamenDeLaboratorio(ExamenId examenId,Nombre nombre,Estado estado) {
         super(examenId);
         this.nombre = nombre;
-        this.fechaRealizacion = fechaRealizacion;
-        this.resultados = resultados;
         this.estado = estado;
     }
 
@@ -28,6 +26,10 @@ public class ExamenDeLaboratorio extends Entity<ExamenId> {
     }
 
     public void actualizarResultados(Resultados resultados){
+        this.resultados=resultados;
+    }
+
+    public void actualizarFechaDeRealizacion(Fecha fechaRealizacion){
         this.resultados=resultados;
     }
 

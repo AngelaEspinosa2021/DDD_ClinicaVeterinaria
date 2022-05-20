@@ -28,8 +28,6 @@ public class PrestacionDeServicioEventChange extends EventChange {
             prestacionDeServicio.examenes.add(new ExamenDeLaboratorio(
                     event.getExamenId(),
                     event.getNombre(),
-                    event.getFechaRealizacion(),
-                    event.getResultados(),
                     event.getEstado()
             ));
         });
@@ -43,7 +41,7 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((MedicamentoAgregado event)->{
-           prestacionDeServicio.medicamentos.add(new Medicamento(event.getMedicamentoId(), event.getNombre(),event.getFechaDeVencimiento()));
+           prestacionDeServicio.medicamentos.add(new Medicamento(event.getMedicamentoId(), event.getNombre()));
         });
 
         apply((NombreDeMedicamentoActualizado event)->{

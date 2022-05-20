@@ -8,13 +8,11 @@ import co.com.sofka.domain.generic.DomainEvent;
 public class MedicamentoAgregado extends DomainEvent {
     private final MedicamentoId medicamentoId;
     private final Nombre nombre;
-    private final Fecha fechaDeVencimiento;
 
-    public MedicamentoAgregado(MedicamentoId medicamentoId, Nombre nombre, Fecha fechaDeVencimiento) {
+    public MedicamentoAgregado(MedicamentoId medicamentoId, Nombre nombre) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.MedicamentoAgregado");
         this.medicamentoId = medicamentoId;
         this.nombre = nombre;
-        this.fechaDeVencimiento = fechaDeVencimiento;
     }
 
     public MedicamentoId getMedicamentoId() {
@@ -25,7 +23,4 @@ public class MedicamentoAgregado extends DomainEvent {
         return nombre;
     }
 
-    public Fecha getFechaDeVencimiento() {
-        return fechaDeVencimiento;
-    }
 }

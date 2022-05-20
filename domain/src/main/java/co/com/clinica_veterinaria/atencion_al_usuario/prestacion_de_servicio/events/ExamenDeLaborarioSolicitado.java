@@ -10,16 +10,12 @@ import co.com.sofka.domain.generic.DomainEvent;
 public class ExamenDeLaborarioSolicitado extends DomainEvent {
     private final ExamenId examenId;
     private final Nombre nombre;
-    private final Fecha fechaRealizacion;
-    private final Resultados resultados;
     private final Estado estado;
 
-    public ExamenDeLaborarioSolicitado(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Resultados resultados, Estado estado) {
+    public ExamenDeLaborarioSolicitado(ExamenId examenId, Nombre nombre, Estado estado) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.ExamenDeLaborarioSolicitado");
         this.examenId = examenId;
         this.nombre = nombre;
-        this.fechaRealizacion = fechaRealizacion;
-        this.resultados = resultados;
         this.estado = estado;
     }
 
@@ -29,14 +25,6 @@ public class ExamenDeLaborarioSolicitado extends DomainEvent {
 
     public Nombre getNombre() {
         return nombre;
-    }
-
-    public Fecha getFechaRealizacion() {
-        return fechaRealizacion;
-    }
-
-    public Resultados getResultados() {
-        return resultados;
     }
 
     public Estado getEstado() {

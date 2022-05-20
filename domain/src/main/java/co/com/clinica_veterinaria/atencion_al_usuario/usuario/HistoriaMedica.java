@@ -11,9 +11,11 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
 
     protected Fecha fecha;
     protected Descripcion descripcion;
+    protected List<Observacion> observaciones;
     protected InformacionDeMedico informacionDelMedico;
     protected TipoAtencion tipoAtencion;
-    protected List<Observacion> observaciones;
+
+
 
     public HistoriaMedica(HistoriaMedicaId historiaMedicaId,Fecha fecha,Descripcion descripcion) {
         super(historiaMedicaId);
