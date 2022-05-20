@@ -69,6 +69,10 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
         appendChange( new ObservacionDeUrgenciaActualizada(urgenciaId,observacion)).apply();
     }
 
+    public void actualizarEstadoDeAtencion(Estado estado){
+        appendChange( new EstadoDeAtencionActualizado(estado)).apply();
+    }
+
     public void agregarAHistoriaMedicaDeUsuario(UsuarioId usuarioId,HistoriaMedicaId historiaMedicaId, Fecha fecha, Descripcion descripcion ){
         appendChange(new HistoriaMedicaDeUsuarioAgregada(usuarioId,historiaMedicaId,fecha,descripcion)).apply();
     }

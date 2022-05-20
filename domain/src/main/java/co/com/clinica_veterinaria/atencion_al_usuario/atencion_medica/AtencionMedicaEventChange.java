@@ -57,6 +57,10 @@ public class AtencionMedicaEventChange extends EventChange {
         apply((ObservacionesDeCitaProgramadaActualizada event)->{
             atencionMedica.citaProgramada.actualizarObservacion(event.getObservacion());
         });
+
+        apply((EstadoDeAtencionActualizado event)->{
+            atencionMedica.actualizarEstadoDeAtencion(event.getEstado());
+        });
         /*
         apply((PrestacionDeServicioSolicitado event)->{
             atencionMedica.
