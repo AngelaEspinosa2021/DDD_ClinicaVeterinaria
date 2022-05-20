@@ -7,11 +7,11 @@ public class UsuarioId extends Identity {
 
     }
 
-    private UsuarioId(String id){
+    public UsuarioId(String id){
         super(id);
     }
 
-    private static UsuarioId of(String id){
+    public static UsuarioId of(String id){
         return new UsuarioId(id);
     }
 }
