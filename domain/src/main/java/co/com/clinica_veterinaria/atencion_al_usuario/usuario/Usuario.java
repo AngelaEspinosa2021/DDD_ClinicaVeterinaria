@@ -7,6 +7,7 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNaci
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.AggregateEvent;
 
+import java.util.Optional;
 import java.util.Set;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
@@ -60,5 +61,23 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange(new ObservacionDeHistoriaMedicaAgregada(historiaMedicaId,observacion)).apply();
     }
 
+    public Optional<HistoriaMedica> getHistoriaMedicaById(HistoriaMedicaId historiaMedicaId){
+        return historiasMedicas().stream().filter(funcion -> funcion.identity().equals(historiaMedicaId)).findFirst();
+    }
 
+    public FechaDeCreacion fechaDeCreacion() {
+        return fechaDeCreacion;
+    }
+
+    public Dueño dueño() {
+        return dueño;
+    }
+
+    public Paciente paciente() {
+        return paciente;
+    }
+
+    public Set<HistoriaMedica> historiasMedicas() {
+        return historiasMedicas;
+    }
 }
