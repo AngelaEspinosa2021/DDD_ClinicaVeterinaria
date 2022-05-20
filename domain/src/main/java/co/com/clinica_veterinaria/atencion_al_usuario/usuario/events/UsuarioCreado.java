@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 
 public class UsuarioCreado extends DomainEvent {
 
-    private FechaDeCreacion fechaDeCreacion;
+    private final FechaDeCreacion fechaDeCreacion;
 
     public UsuarioCreado(FechaDeCreacion fechaDeCreacion) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.UsuarioCreado");

@@ -7,11 +7,11 @@ import java.util.List;
 
 public class HistoriaMedica extends Entity<HistoriaMedicaId> {
 
-    private Fecha fecha;
-    private Descripcion descripcion;
-    private InformacionDeMedico informacionDelMedico;
-    private TipoAtencion tipoAtencion;
-    private List<Observacion> observaciones;
+    protected Fecha fecha;
+    protected Descripcion descripcion;
+    protected InformacionDeMedico informacionDelMedico;
+    protected TipoAtencion tipoAtencion;
+    protected List<Observacion> observaciones;
 
     public HistoriaMedica(HistoriaMedicaId historiaMedicaId,Fecha fecha,Descripcion descripcion) {
         super(historiaMedicaId);

@@ -6,9 +6,9 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompl
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class PacienteCreado extends DomainEvent {
-    private PacienteId pacienteId;
-    private NombreCompleto nombreCompleto;
-    private FechaDeNacimiento fechaDeNacimiento;
+    private final PacienteId pacienteId;
+    private final NombreCompleto nombreCompleto;
+    private final FechaDeNacimiento fechaDeNacimiento;
 
     public PacienteCreado(PacienteId pacienteId, NombreCompleto nombreCompleto, FechaDeNacimiento fechaDeNacimiento) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.PacienteCreado");

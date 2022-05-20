@@ -5,10 +5,10 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.Objects;
 
 public class DatosDeContacto implements ValueObject<DatosDeContacto.Props> {
-    private String direccion;
-    private String barrio;
-    private String telefonoCelular;
-    private String correo;
+    private final String direccion;
+    private final String barrio;
+    private final String telefonoCelular;
+    private final String correo;
 
     public DatosDeContacto(String direccion, String barrio, String telefonoCelular, String correo){
         this.direccion = Objects.requireNonNull(direccion);

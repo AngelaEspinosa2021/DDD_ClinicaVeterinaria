@@ -10,13 +10,13 @@ import co.com.sofka.domain.generic.Entity;
 import java.util.Objects;
 
 public class ExamenDeLaboratorio extends Entity<ExamenId> {
-    private Nombre nombre;
-    private FechaRealizacion fechaRealizacion;
-    private Resultados resultados;
-    private Estado estado;
+    protected Nombre nombre;
+    protected FechaRealizacion fechaRealizacion;
+    protected Resultados resultados;
+    protected Estado estado;
 
-    public ExamenDeLaboratorio(ExamenId entityId,Nombre nombre,FechaRealizacion fechaRealizacion,Resultados resultados,Estado estado) {
-        super(entityId);
+    public ExamenDeLaboratorio(ExamenId examenId,Nombre nombre,FechaRealizacion fechaRealizacion,Resultados resultados,Estado estado) {
+        super(examenId);
         this.nombre = nombre;
         this.fechaRealizacion = fechaRealizacion;
         this.resultados = resultados;

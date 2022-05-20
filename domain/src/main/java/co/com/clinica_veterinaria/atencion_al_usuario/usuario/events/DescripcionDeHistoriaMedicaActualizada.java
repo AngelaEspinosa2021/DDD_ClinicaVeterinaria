@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMed
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class DescripcionDeHistoriaMedicaActualizada extends DomainEvent {
-    private HistoriaMedicaId historiaMedicaId;
-    private Descripcion descripcion;
+    private final HistoriaMedicaId historiaMedicaId;
+    private final Descripcion descripcion;
 
     public DescripcionDeHistoriaMedicaActualizada(HistoriaMedicaId historiaMedicaId, Descripcion descripcion) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.DescripcionDeHistoriMedicaActualizada");

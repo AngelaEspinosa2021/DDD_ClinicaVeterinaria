@@ -12,8 +12,8 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Paciente extends Entity<PacienteId> {
-    private NombreCompleto nombreCompleto;
-    private FechaDeNacimiento fechaDeNacimiento;
+    protected NombreCompleto nombreCompleto;
+    protected FechaDeNacimiento fechaDeNacimiento;
 
     public Paciente(PacienteId pacienteId,NombreCompleto nombreCompleto,FechaDeNacimiento fechaDeNacimiento) {
         super(pacienteId);

@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompl
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class NombreCompletoDeDueñoActualizado extends DomainEvent {
-    private DueñoId dueñoId;
-    private NombreCompleto nombreCompleto;
+    private final DueñoId dueñoId;
+    private final NombreCompleto nombreCompleto;
 
     public NombreCompletoDeDueñoActualizado(DueñoId dueñoId, NombreCompleto nombreCompleto) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.NombreCompletoDeDueñoActualizado");

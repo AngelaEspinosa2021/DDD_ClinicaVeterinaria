@@ -10,9 +10,9 @@ import java.util.Objects;
 
 public class Dueño extends Entity<DueñoId> {
 
-    private NombreCompleto nombreCompleto;
-    private DatosDeContacto datosDeContacto;
-    private FechaDeNacimiento fechaDeNacimiento;
+    protected NombreCompleto nombreCompleto;
+    protected DatosDeContacto datosDeContacto;
+    protected FechaDeNacimiento fechaDeNacimiento;
 
 
     public Dueño(DueñoId dueñoId,NombreCompleto nombreCompleto,DatosDeContacto datosDeContacto,FechaDeNacimiento fechaDeNacimiento){
