@@ -5,7 +5,10 @@ import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.val
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
@@ -19,6 +22,17 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     public PrestacionDeServicio(ServicioId servicioId, Prioridad prioridad,Fecha fechaDeSolicitud) {
         super(servicioId);
         appendChange(new PrestacionDeServicioCreado(prioridad,fechaDeSolicitud)).apply();
+    }
+
+    private PrestacionDeServicio(ServicioId servicioId){
+        super(servicioId);
+        subscribe(new PrestacionDeServicioEventChange(this));
+    }
+
+    public static PrestacionDeServicio from(ServicioId servicioId, List<DomainEvent> events){
+        var prestacionDeServicio = new PrestacionDeServicio(servicioId);
+        events.forEach(prestacionDeServicio::applyEvent);
+        return prestacionDeServicio;
     }
 
     public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Resultados resultados, Estado estado){
@@ -55,5 +69,33 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
 
     public void actualizarFechaDeAltaDeHospitalizacion(HospitalizacionId hospitalizacionId, Fecha fechaDeAlta){
         appendChange( new FechaDeAltaDeHospitalizacionActualizada(hospitalizacionId,fechaDeAlta)).apply();
+    }
+
+    public Optional<Medicamento> getMedicamentoById(MedicamentoId medicamentoId){
+        return medicamentos().stream().filter(funcion -> funcion.identity().equals(medicamentoId)).findFirst();
+    }
+
+    public Optional<ExamenDeLaboratorio> getExamenById(ExamenId examenId){
+        return examenes.stream().filter(funcion -> funcion.identity().equals(examenId)).findFirst();
+    }
+
+    public Prioridad prioridad() {
+        return prioridad;
+    }
+
+    public Fecha fechaDeSolicitud() {
+        return fechaDeSolicitud;
+    }
+
+    public Set<ExamenDeLaboratorio> examenes() {
+        return examenes;
+    }
+
+    public Set<Medicamento> medicamentos() {
+        return medicamentos;
+    }
+
+    public Hospitalizacion hospitalizacion() {
+        return hospitalizacion;
     }
 }
