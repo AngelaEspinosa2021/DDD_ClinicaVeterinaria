@@ -2,14 +2,15 @@ package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.ev
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.EstadoDeHospitalizacion;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.HospitalizacionId;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class HospitalizacionSolicitada extends DomainEvent {
     private final HospitalizacionId hospitalizacionId;
     private final EstadoDeHospitalizacion estadoDeHospitalizacion;
-    private final FechaDeIngreso fechaDeIngreso;
+    private final Fecha fechaDeIngreso;
 
-    public HospitalizacionSolicitada(HospitalizacionId hospitalizacionId, EstadoDeHospitalizacion estadoDeHospitalizacion, FechaDeIngreso fechaDeIngreso) {
+    public HospitalizacionSolicitada(HospitalizacionId hospitalizacionId, EstadoDeHospitalizacion estadoDeHospitalizacion, Fecha fechaDeIngreso) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.HospitalizacionSolicitada");
         this.hospitalizacionId = hospitalizacionId;
         this.estadoDeHospitalizacion = estadoDeHospitalizacion;
@@ -24,7 +25,7 @@ public class HospitalizacionSolicitada extends DomainEvent {
         return estadoDeHospitalizacion;
     }
 
-    public FechaDeIngreso getFechaDeIngreso() {
+    public Fecha getFechaDeIngreso() {
         return fechaDeIngreso;
     }
 }

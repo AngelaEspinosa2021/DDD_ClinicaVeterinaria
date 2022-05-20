@@ -1,9 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.ExamenDeLaborarioSolicitado;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.HospitalizacionSolicitada;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.MedicamentoAgregado;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.PrestacionDeServicioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
@@ -59,9 +56,4 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     public void actualizarFechaDeAltaDeHospitalizacion(HospitalizacionId hospitalizacionId, Fecha fechaDeAlta){
         appendChange( new FechaDeAltaDeHospitalizacionActualizada(hospitalizacionId,fechaDeAlta)).apply();
     }
-
-
-
-
-
 }

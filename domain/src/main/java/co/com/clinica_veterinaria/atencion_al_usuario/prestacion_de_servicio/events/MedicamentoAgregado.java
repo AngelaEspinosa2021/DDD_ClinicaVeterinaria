@@ -2,14 +2,15 @@ package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.ev
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.MedicamentoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class MedicamentoAgregado extends DomainEvent {
     private final MedicamentoId medicamentoId;
     private final Nombre nombre;
-    private final FechaDeVencimiento fechaDeVencimiento;
+    private final Fecha fechaDeVencimiento;
 
-    public MedicamentoAgregado(MedicamentoId medicamentoId, Nombre nombre, FechaDeVencimiento fechaDeVencimiento) {
+    public MedicamentoAgregado(MedicamentoId medicamentoId, Nombre nombre, Fecha fechaDeVencimiento) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.MedicamentoAgregado");
         this.medicamentoId = medicamentoId;
         this.nombre = nombre;
@@ -24,7 +25,7 @@ public class MedicamentoAgregado extends DomainEvent {
         return nombre;
     }
 
-    public FechaDeVencimiento getFechaDeVencimiento() {
+    public Fecha getFechaDeVencimiento() {
         return fechaDeVencimiento;
     }
 }
