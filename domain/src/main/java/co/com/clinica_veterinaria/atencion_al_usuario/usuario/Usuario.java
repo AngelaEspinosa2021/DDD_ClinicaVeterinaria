@@ -52,20 +52,12 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange( new FechaDeCreacionActualizada(fechaDeCreacion)).apply();
     }
 
-    public void actualizarDescripcionDeHistoriaMedica(HistoriaMedicaId historiaMedicaId, Descripcion descripcion){
-        appendChange(new DescripcionDeHistoriaMedicaActualizada(historiaMedicaId,descripcion)).apply();
-    }
-
     public void asociarMedicoAHistoriaMedica(HistoriaMedicaId historiaMedicaId, InformacionDeMedico informacionDeMedico){
         appendChange(new MedicoDeHistoriaMedicaAsociado(historiaMedicaId,informacionDeMedico)).apply();
     }
 
     public void actualizarNombreCompletoDePaciente(PacienteId pacienteId, NombreCompleto nombreCompleto){
         appendChange( new NombreCompletoPacienteActualizado(pacienteId,nombreCompleto)).apply();
-    }
-
-    public void actualizarDatosDeContactoDeDueño(DueñoId dueñoId, DatosDeContacto datosDeContacto){
-        appendChange(new DatosDeContactoDeDueñoActualizados(dueñoId,datosDeContacto)).apply();
     }
 
     public void actualizarNombreCompletoDeDueño(DueñoId dueñoId, NombreCompleto nombreCompleto){
@@ -78,18 +70,6 @@ public class Usuario extends AggregateEvent<UsuarioId> {
 
     protected Optional<HistoriaMedica> getHistoriaMedicaById(HistoriaMedicaId historiaMedicaId){
         return historiasMedicas().stream().filter(funcion -> funcion.identity().equals(historiaMedicaId)).findFirst();
-    }
-
-    public Fecha fechaDeCreacion() {
-        return fechaDeCreacion;
-    }
-
-    public Dueño dueño() {
-        return dueño;
-    }
-
-    public Paciente paciente() {
-        return paciente;
     }
 
     public Set<HistoriaMedica> historiasMedicas() {

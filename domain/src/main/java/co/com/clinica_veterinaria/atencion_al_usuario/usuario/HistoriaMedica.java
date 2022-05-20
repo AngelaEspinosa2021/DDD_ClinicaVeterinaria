@@ -31,27 +31,8 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
         this.observaciones.add(observacion);
     }
 
-    public void actualizarDescripcion(Descripcion descripcion){
-        this.descripcion=descripcion;
-    }
-
     public Fecha fecha() {
         return fecha;
     }
 
-    public Descripcion descripcion() {
-        return descripcion;
-    }
-
-    public InformacionDeMedico informacionDelMedico() {
-        return informacionDelMedico;
-    }
-
-    public TipoAtencion tipoAtencion() {
-        return tipoAtencion;
-    }
-
-    public List<Observacion> observaciones() {
-        return observaciones;
-    }
 }
