@@ -1,2 +1,24 @@
-package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands;public class ActualizarDatosDeContactoDeDueño {
+package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands;
+
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
+import co.com.sofka.domain.generic.Command;
+
+public class ActualizarDatosDeContactoDeDueño extends Command {
+
+    private DueñoId dueñoId;
+    private DatosDeContacto datosDeContacto;
+
+    public ActualizarDatosDeContactoDeDueño(DueñoId dueñoId, DatosDeContacto datosDeContacto) {
+        this.dueñoId = dueñoId;
+        this.datosDeContacto = datosDeContacto;
+    }
+
+    public DueñoId getDueñoId() {
+        return dueñoId;
+    }
+
+    public DatosDeContacto getDatosDeContacto() {
+        return datosDeContacto;
+    }
 }

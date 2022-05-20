@@ -25,10 +25,6 @@ public class Paciente extends Entity<PacienteId> {
         this.nombreCompleto=nombreCompleto;
     }
 
-    public void actualizarFechaDeNacimiento(FechaDeNacimiento fechaDeNacimiento){
-        this.fechaDeNacimiento=fechaDeNacimiento;
-    }
-
     public NombreCompleto nombreCompleto() {
         return nombreCompleto;
     }

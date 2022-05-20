@@ -30,11 +30,6 @@ public class Dueño extends Entity<DueñoId> {
         this.nombreCompleto=Objects.requireNonNull(nombreCompleto);
     }
 
-    public void actualizarFechaDeNacimiento(FechaDeNacimiento fechaDeNacimiento){
-        this.fechaDeNacimiento=Objects.requireNonNull(fechaDeNacimiento);
-    }
-
-
     public NombreCompleto nombreCompleto() {
         return nombreCompleto;
     }
