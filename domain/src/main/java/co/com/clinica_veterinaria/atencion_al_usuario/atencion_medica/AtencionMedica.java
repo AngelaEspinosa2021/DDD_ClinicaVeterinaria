@@ -1,7 +1,7 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.AtencionId;
-import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.Estado;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.FechaDeAtencion;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.TipoDeAtencion;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.PrestacionDeServicio;
