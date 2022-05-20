@@ -1,18 +1,39 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Descripcion;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Fecha;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMedicaId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.PacienteId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.Entity;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class Paciente extends Entity<PacienteId> {
     private NombreCompleto nombreCompleto;
     private FechaDeNacimiento fechaDeNacimiento;
-    private Set<HistoriaMedica> historiasMedicas;
 
-    public Paciente(PacienteId pacienteId) {
+    public Paciente(PacienteId pacienteId,NombreCompleto nombreCompleto,FechaDeNacimiento fechaDeNacimiento) {
         super(pacienteId);
+        this.nombreCompleto=nombreCompleto;
+        this.fechaDeNacimiento=fechaDeNacimiento;
+    }
+
+    public void actualizarNombreCompleto(NombreCompleto nombreCompleto){
+        this.nombreCompleto=nombreCompleto;
+    }
+
+    public void actualizarFechaDeNacimiento(FechaDeNacimiento fechaDeNacimiento){
+        this.fechaDeNacimiento=fechaDeNacimiento;
+    }
+
+    public NombreCompleto nombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public FechaDeNacimiento fechaDeNacimiento() {
+        return fechaDeNacimiento;
     }
 }

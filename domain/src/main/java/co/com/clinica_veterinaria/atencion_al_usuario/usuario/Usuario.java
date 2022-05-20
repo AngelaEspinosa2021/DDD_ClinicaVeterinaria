@@ -10,10 +10,13 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNaci
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.AggregateEvent;
 
+import java.util.Set;
+
 public class Usuario extends AggregateEvent<UsuarioId> {
     protected FechaDeCreacion fechaDeCreacion;
     protected Dueño dueño;
     protected Paciente paciente;
+    protected Set<HistoriaMedica> historiasMedicas;
 
     public Usuario(UsuarioId usuarioId, FechaDeCreacion fechaDeCreacion){
         super(usuarioId);
