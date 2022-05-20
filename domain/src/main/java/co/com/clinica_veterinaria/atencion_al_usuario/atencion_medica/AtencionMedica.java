@@ -1,5 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.AtencionCreada;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.AtencionId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.TipoDeAtencion;
@@ -16,12 +17,14 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
     protected TipoDeAtencion tipoDeAtencion;
     protected Estado estado;
     protected UsuarioId usuarioId;
+    protected Medico medico;
     protected Urgencia urgencia;
     protected Map<ServicioId, PrestacionDeServicio> servicios;
     protected CitaProgramada citaProgramada;
 
 
-    public AtencionMedica(AtencionId entityId) {
-        super(entityId);
+    public AtencionMedica(AtencionId atencionId, Fecha fechaDeAtencion,TipoDeAtencion tipoDeAtencion,Estado estado) {
+        super(atencionId);
+        appendChange( new AtencionCreada(fechaDeAtencion,tipoDeAtencion,estado)).apply();
     }
 }

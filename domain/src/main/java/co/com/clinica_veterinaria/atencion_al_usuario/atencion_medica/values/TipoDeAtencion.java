@@ -13,7 +13,7 @@ public class TipoDeAtencion implements ValueObject<TipoDeAtencion.Atenciones> {
     }
 
     @Override
-    public Atenciones value() {
+    public Atenciones value(){
         return value;
     }
 
