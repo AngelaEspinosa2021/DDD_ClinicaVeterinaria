@@ -2,7 +2,7 @@ package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.Entity;
 
@@ -12,10 +12,10 @@ public class Dueño extends Entity<DueñoId> {
 
     protected NombreCompleto nombreCompleto;
     protected DatosDeContacto datosDeContacto;
-    protected FechaDeNacimiento fechaDeNacimiento;
+    protected Fecha fechaDeNacimiento;
 
 
-    public Dueño(DueñoId dueñoId,NombreCompleto nombreCompleto,DatosDeContacto datosDeContacto,FechaDeNacimiento fechaDeNacimiento){
+    public Dueño(DueñoId dueñoId,NombreCompleto nombreCompleto,DatosDeContacto datosDeContacto,Fecha fechaDeNacimiento){
         super(dueñoId);
         this.nombreCompleto=nombreCompleto;
         this.datosDeContacto=datosDeContacto;
@@ -38,7 +38,7 @@ public class Dueño extends Entity<DueñoId> {
         return datosDeContacto;
     }
 
-    public FechaDeNacimiento fechaDeNacimiento() {
+    public Fecha fechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 }

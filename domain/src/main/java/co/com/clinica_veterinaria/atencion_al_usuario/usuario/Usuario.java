@@ -3,7 +3,7 @@ package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -14,12 +14,12 @@ import java.util.Optional;
 import java.util.Set;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
-    protected FechaDeCreacion fechaDeCreacion;
+    protected Fecha fechaDeCreacion;
     protected Dueño dueño;
     protected Paciente paciente;
     protected Set<HistoriaMedica> historiasMedicas;
 
-    public Usuario(UsuarioId usuarioId, FechaDeCreacion fechaDeCreacion){
+    public Usuario(UsuarioId usuarioId, Fecha fechaDeCreacion){
         super(usuarioId);
         appendChange( new UsuarioCreado(fechaDeCreacion)).apply();
     }
@@ -35,11 +35,11 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         return usuario;
     }
 
-    public void agregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, FechaDeNacimiento fechaDeNacimiento){
+    public void agregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento){
         appendChange(new DueñoCreado(dueñoId,nombreCompleto,datosDeContacto,fechaDeNacimiento)).apply();
     }
 
-    public void agregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, FechaDeNacimiento fechaDeNacimiento){
+    public void agregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, Fecha fechaDeNacimiento){
         appendChange( new PacienteCreado(pacienteId,nombreCompleto,fechaDeNacimiento)).apply();
     }
 
@@ -47,7 +47,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange( new HistoriaMedicaCreada(historiaMedicaId,fecha,descripcion));
     }
 
-    public void actualizarFechaDeCreacion(FechaDeCreacion fechaDeCreacion){
+    public void actualizarFechaDeCreacion(Fecha fechaDeCreacion){
         appendChange( new FechaDeCreacionActualizada(fechaDeCreacion)).apply();
     }
 
@@ -79,7 +79,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         return historiasMedicas().stream().filter(funcion -> funcion.identity().equals(historiaMedicaId)).findFirst();
     }
 
-    public FechaDeCreacion fechaDeCreacion() {
+    public Fecha fechaDeCreacion() {
         return fechaDeCreacion;
     }
 

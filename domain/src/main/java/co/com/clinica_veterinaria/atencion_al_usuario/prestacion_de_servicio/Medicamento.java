@@ -1,15 +1,15 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.FechaDeVencimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.MedicamentoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Entity;
 
 public class Medicamento extends Entity<MedicamentoId> {
     protected Nombre nombre;
-    protected FechaDeVencimiento fechaDeVencimiento;
+    protected Fecha fechaDeVencimiento;
 
-    public Medicamento(MedicamentoId medicamentoId,Nombre nombre,FechaDeVencimiento fechaDeVencimiento){
+    public Medicamento(MedicamentoId medicamentoId,Nombre nombre,Fecha fechaDeVencimiento){
         super(medicamentoId);
         this.nombre = nombre;
         this.fechaDeVencimiento = fechaDeVencimiento;
@@ -19,7 +19,7 @@ public class Medicamento extends Entity<MedicamentoId> {
         this.nombre=nombre;
     }
 
-    public void actualizarFechaDeVencimiento(FechaDeVencimiento fechaDeVencimiento){
+    public void actualizarFechaDeVencimiento(Fecha fechaDeVencimiento){
         this.fechaDeVencimiento=fechaDeVencimiento;
     }
 
@@ -27,7 +27,7 @@ public class Medicamento extends Entity<MedicamentoId> {
         return nombre;
     }
 
-    public FechaDeVencimiento fechaDeVencimiento() {
+    public Fecha fechaDeVencimiento() {
         return fechaDeVencimiento;
     }
 }

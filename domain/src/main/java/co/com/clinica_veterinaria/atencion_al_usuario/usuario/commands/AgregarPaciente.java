@@ -1,16 +1,16 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.PacienteId;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarPaciente extends Command {
     private PacienteId pacienteId;
     private NombreCompleto nombreCompleto;
-    private FechaDeNacimiento fechaDeNacimiento;
+    private Fecha fechaDeNacimiento;
 
-    public AgregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, FechaDeNacimiento fechaDeNacimiento) {
+    public AgregarPaciente(PacienteId pacienteId, NombreCompleto nombreCompleto, Fecha fechaDeNacimiento) {
         this.pacienteId = pacienteId;
         this.nombreCompleto = nombreCompleto;
         this.fechaDeNacimiento = fechaDeNacimiento;
@@ -24,7 +24,7 @@ public class AgregarPaciente extends Command {
         return nombreCompleto;
     }
 
-    public FechaDeNacimiento getFechaDeNacimiento() {
+    public Fecha getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 }

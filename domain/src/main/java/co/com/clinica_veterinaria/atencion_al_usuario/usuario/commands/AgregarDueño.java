@@ -2,7 +2,7 @@ package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.sofka.domain.generic.Command;
 
@@ -11,9 +11,9 @@ public class AgregarDueño extends Command {
     private DueñoId dueñoId;
     private NombreCompleto nombreCompleto;
     private DatosDeContacto datosDeContacto;
-    private FechaDeNacimiento fechaDeNacimiento;
+    private Fecha fechaDeNacimiento;
 
-    public AgregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, FechaDeNacimiento fechaDeNacimiento) {
+    public AgregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento) {
         this.dueñoId = dueñoId;
         this.nombreCompleto = nombreCompleto;
         this.datosDeContacto = datosDeContacto;
@@ -32,7 +32,7 @@ public class AgregarDueño extends Command {
         return datosDeContacto;
     }
 
-    public FechaDeNacimiento getFechaDeNacimiento() {
+    public Fecha getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 }

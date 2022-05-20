@@ -1,7 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ExamenId;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.FechaRealizacion;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Resultados;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
