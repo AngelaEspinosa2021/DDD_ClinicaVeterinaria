@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class FechaDeAltaDeHospitalizacionActualizada extends DomainEvent {
-    private HospitalizacionId hospitalizacionId;
-    private Fecha fechaDeAlta;
+    private final HospitalizacionId hospitalizacionId;
+    private final Fecha fechaDeAlta;
 
     public FechaDeAltaDeHospitalizacionActualizada(HospitalizacionId hospitalizacionId, Fecha fechaDeAlta) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.FechaDeAltaDeHospitalizacionActualizada");

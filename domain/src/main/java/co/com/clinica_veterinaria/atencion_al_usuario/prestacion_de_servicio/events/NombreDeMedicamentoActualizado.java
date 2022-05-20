@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.val
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class NombreDeMedicamentoActualizado extends DomainEvent {
-    private MedicamentoId medicamentoId;
-    private Nombre nombre;
+    private final MedicamentoId medicamentoId;
+    private final Nombre nombre;
 
     public NombreDeMedicamentoActualizado(MedicamentoId medicamentoId, Nombre nombre) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.NombreDeMedicamentoActualizado");

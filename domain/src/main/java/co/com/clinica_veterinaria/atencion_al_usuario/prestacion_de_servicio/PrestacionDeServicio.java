@@ -71,11 +71,11 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange( new FechaDeAltaDeHospitalizacionActualizada(hospitalizacionId,fechaDeAlta)).apply();
     }
 
-    public Optional<Medicamento> getMedicamentoById(MedicamentoId medicamentoId){
+    protected Optional<Medicamento> getMedicamentoById(MedicamentoId medicamentoId){
         return medicamentos().stream().filter(funcion -> funcion.identity().equals(medicamentoId)).findFirst();
     }
 
-    public Optional<ExamenDeLaboratorio> getExamenById(ExamenId examenId){
+    protected Optional<ExamenDeLaboratorio> getExamenById(ExamenId examenId){
         return examenes.stream().filter(funcion -> funcion.identity().equals(examenId)).findFirst();
     }
 

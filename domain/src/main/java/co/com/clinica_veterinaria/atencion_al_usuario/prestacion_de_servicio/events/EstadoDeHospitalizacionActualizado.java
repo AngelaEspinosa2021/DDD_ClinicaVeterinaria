@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.val
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class EstadoDeHospitalizacionActualizado extends DomainEvent {
-    private HospitalizacionId hospitalizacionId;
-    private EstadoDeHospitalizacion estadoDeHospitalizacion;
+    private final HospitalizacionId hospitalizacionId;
+    private final EstadoDeHospitalizacion estadoDeHospitalizacion;
 
     public EstadoDeHospitalizacionActualizado(HospitalizacionId hospitalizacionId, EstadoDeHospitalizacion estadoDeHospitalizacion) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.EstadoDeHospitalizacionActualizado");

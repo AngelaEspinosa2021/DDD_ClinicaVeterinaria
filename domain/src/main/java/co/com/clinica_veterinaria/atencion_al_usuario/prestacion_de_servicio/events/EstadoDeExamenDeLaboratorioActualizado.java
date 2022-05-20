@@ -5,8 +5,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class EstadoDeExamenDeLaboratorioActualizado extends DomainEvent {
-    private ExamenId examenId;
-    private Estado estado;
+    private final ExamenId examenId;
+    private final Estado estado;
 
     public EstadoDeExamenDeLaboratorioActualizado(ExamenId examenId, Estado estado) {
         super("co.com.clinica_veterinaria.atencion_al_usuario.EstadoDeExamenDeLaboratorioActualizado");
