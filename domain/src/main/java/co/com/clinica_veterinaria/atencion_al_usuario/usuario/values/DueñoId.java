@@ -9,7 +9,7 @@ public class DueñoId extends Identity {
 
     }
 
-    private DueñoId(String id){
+    public DueñoId(String id){
         super(id);
     }
 
