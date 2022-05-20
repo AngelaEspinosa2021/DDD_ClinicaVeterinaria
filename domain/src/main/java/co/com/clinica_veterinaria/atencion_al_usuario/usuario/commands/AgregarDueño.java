@@ -23,9 +23,7 @@ public class AgregarDueño extends Command {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public UsuarioId getUsuarioId() {
-        return usuarioId;
-    }
+    public UsuarioId getUsuarioId() {return usuarioId;}
 
     public DueñoId getDueñoId() {
         return dueñoId;
