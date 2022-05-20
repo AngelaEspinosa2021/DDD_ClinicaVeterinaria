@@ -5,6 +5,7 @@ import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.FechaDeNacimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 

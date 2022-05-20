@@ -1,14 +1,13 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.ExamenDeLaborarioSolicitado;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.FechaDeVencimiento;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.FechaDeVencimiento;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.MedicamentoAgregado;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.PrestacionDeServicioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.sofka.domain.generic.AggregateEvent;
 
-import java.util.Objects;
 import java.util.Set;
 
 public class PrestacionDeServicio extends AggregateEvent<ServicioId> {

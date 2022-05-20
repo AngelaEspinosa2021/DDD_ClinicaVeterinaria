@@ -1,7 +1,7 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMedicaId;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Observacion;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.Command;
 
 public class AgregarObservacionAHistoriaMedica extends Command {
