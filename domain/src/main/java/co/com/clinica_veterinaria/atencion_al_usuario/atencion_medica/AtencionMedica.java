@@ -32,6 +32,11 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
         appendChange( new AtencionCreada(fechaDeAtencion,tipoDeAtencion,estado)).apply();
     }
 
+    private AtencionMedica(AtencionId atencionId){
+        super(atencionId);
+        subscribe(new AtencionMedicaEventChange(this));
+    }
+
     public void agregarMedico(MedicoId medicoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento){
         appendChange( new MedicoAgregado(medicoId,nombreCompleto,datosDeContacto,fechaDeNacimiento)).apply();
     }
@@ -71,6 +76,5 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
     public void solicitarPrestacionDeServicio(ServicioId servicioId, Prioridad prioridad, Fecha fechaDeSolicitud){
         appendChange(new PrestacionDeServicioSolicitado(servicioId,prioridad,fechaDeSolicitud)).apply();
     }
-
 
 }
