@@ -1,8 +1,11 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.*;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.EventChange;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 public class PrestacionDeServicioEventChange extends EventChange {
@@ -10,8 +13,10 @@ public class PrestacionDeServicioEventChange extends EventChange {
         apply((PrestacionDeServicioCreado event)->{
             prestacionDeServicio.prioridad=event.getPrioridad();
             prestacionDeServicio.fechaDeSolicitud=event.getFechaDeSolicitud();
+            prestacionDeServicio.estado=new Estado(Estado.Estados.POR_INICIAR);
             prestacionDeServicio.medicamentos=new HashSet<>();
             prestacionDeServicio.examenes=new HashSet<>();
+            prestacionDeServicio.fechaDeFinalizacion= new Fecha(LocalDate.parse("1900-01-01"));
         });
 
         apply((EstadoDeExamenDeLaboratorioActualizado event)->{
@@ -30,6 +35,11 @@ public class PrestacionDeServicioEventChange extends EventChange {
 
         apply((FechaDeAltaDeHospitalizacionActualizada event)->{
             prestacionDeServicio.hospitalizacion.actualizarFechaDeAlta(event.getFechaDeAlta());
+        });
+
+        apply((FechaDeFinalizacionActualizada event)->{
+            prestacionDeServicio.fechaDeFinalizacion=event.getFechaDeFinalizacion();
+            prestacionDeServicio.estado=new Estado(Estado.Estados.FINALIZADO);
         });
 
         apply((HospitalizacionSolicitada event)->{

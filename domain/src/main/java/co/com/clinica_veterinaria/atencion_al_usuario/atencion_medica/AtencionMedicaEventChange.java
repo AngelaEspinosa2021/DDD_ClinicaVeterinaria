@@ -14,12 +14,17 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.tipoDeAtencion=event.getTipoDeAtencion();
             atencionMedica.estado=new Estado(Estado.Estados.POR_INICIAR);
             atencionMedica.proximaCita=new Fecha(LocalDate.parse("1900-01-01"));
+            atencionMedica.fechaDeFinalizacion=new Fecha(LocalDate.parse("1900-01-01"));
             atencionMedica.usuarioId=event.getUsuarioId();
         });
 
         apply((AtencionFinalizada event)->{
             atencionMedica.proximaCita=event.getProximaCita();
             atencionMedica.estado=new Estado(Estado.Estados.FINALIZADO);
+        });
+
+        apply((FechaDeFinalizacionPrestacionDeServicioActualizada event)->{
+            atencionMedica.fechaDeFinalizacion=event.getFechaDeFinalizacion();
         });
 
         apply((MedicoAgregado event)->{

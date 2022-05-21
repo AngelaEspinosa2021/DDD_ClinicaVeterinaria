@@ -16,6 +16,7 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     protected Prioridad prioridad;
     protected Fecha fechaDeSolicitud;
     protected Fecha fechaDeFinalizacion;
+    protected Estado estado;
     protected Set<ExamenDeLaboratorio> examenes;
     protected Set<Medicamento> medicamentos;
     protected Hospitalizacion hospitalizacion;
