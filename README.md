@@ -7,7 +7,4 @@
 
 - Java / DDD / Intellij / Sofka
 
-## Video Explicación 
-[VIDEO]()
-
-## con ❤️ por Angela Espinosa🍿
+## ❤️ por Angela Espinosa🍿
