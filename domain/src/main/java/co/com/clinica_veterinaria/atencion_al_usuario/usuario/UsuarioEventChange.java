@@ -1,16 +1,16 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.EventChange;
 
-import java.util.HashSet;
+import java.time.LocalDate;
 
 public class UsuarioEventChange extends EventChange {
     public UsuarioEventChange(Usuario usuario) {
         apply((UsuarioCreado event)->{
             usuario.fechaDeCreacion=event.getFechaDeCreacion();
-            usuario.proximaCita=new ProximaCita("");
+            usuario.proximaCita=new Fecha(LocalDate.parse("1900-01-01"));
         });
 
         apply((ProximaCitaAgendada event)->{

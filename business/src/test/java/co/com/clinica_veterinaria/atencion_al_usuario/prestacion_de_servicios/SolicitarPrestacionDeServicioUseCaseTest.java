@@ -26,7 +26,7 @@ class SolicitarPrestacionDeServicioUseCaseTest {
     @Test
     public void solicitarPrestacionDeServicioHappyPass(){
         ServicioId servicioId = ServicioId.of("001");
-        Prioridad prioridad = new Prioridad(Prioridad.Prioridades.ALTA);
+        Prioridad prioridad = new Prioridad("ALTA");
         Fecha fechaDeSolicitud = new Fecha(LocalDate.parse("2022-05-20"));
         var command = new SolicitarPrestacionDeServicio(servicioId,prioridad,fechaDeSolicitud);
 

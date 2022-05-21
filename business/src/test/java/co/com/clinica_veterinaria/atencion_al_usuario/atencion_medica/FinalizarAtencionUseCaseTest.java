@@ -6,7 +6,6 @@ import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.Ate
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.services.ConsultarProximaCita;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.AtencionId;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.TipoDeAtencion;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.business.generic.ServiceBuilder;
@@ -46,7 +45,7 @@ class FinalizarAtencionUseCaseTest {
         when(repository.getEventsBy("001")).thenReturn(history());
         useCase.addRepository(repository);
 
-        when(service.consultarPorAtencionId(any(AtencionId.class))).thenReturn(new ProximaCita("2022-06-25"));
+        when(service.consultarPorAtencionId(any(AtencionId.class))).thenReturn(new Fecha(LocalDate.parse("2022-06-25")));
         useCase.addServiceBuilder(new ServiceBuilder().addService(service));
 
         var events = UseCaseHandler.getInstance()
@@ -55,7 +54,7 @@ class FinalizarAtencionUseCaseTest {
                 .getDomainEvents();
 
         var event = (AtencionFinalizada)events.get(0);
-        Assertions.assertEquals("2022-06-25", event.getProximaCita().value());
+        Assertions.assertEquals(LocalDate.parse("2022-06-25"), event.getProximaCita().value());
     }
 
     public List<DomainEvent> history(){

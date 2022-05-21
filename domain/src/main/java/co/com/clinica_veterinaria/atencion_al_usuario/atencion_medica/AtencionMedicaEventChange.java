@@ -1,9 +1,11 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.sofka.domain.generic.EventChange;
+
+import java.time.LocalDate;
 
 public class AtencionMedicaEventChange extends EventChange {
     public AtencionMedicaEventChange(AtencionMedica atencionMedica) {
@@ -11,7 +13,7 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.fechaDeAtencion=event.getFechaDeAtencion();
             atencionMedica.tipoDeAtencion=event.getTipoDeAtencion();
             atencionMedica.estado=new Estado(Estado.Estados.POR_INICIAR);
-            atencionMedica.proximaCita=new ProximaCita("");
+            atencionMedica.proximaCita=new Fecha(LocalDate.parse("1900-01-01"));
             atencionMedica.usuarioId=event.getUsuarioId();
         });
 

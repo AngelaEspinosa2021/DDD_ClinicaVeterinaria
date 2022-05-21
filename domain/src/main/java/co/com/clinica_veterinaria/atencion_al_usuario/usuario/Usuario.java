@@ -1,12 +1,8 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
-import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.AtencionMedica;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
@@ -17,7 +13,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Dueño dueño;
     protected Paciente paciente;
     protected HistoriaMedica historiaMedica;
-    protected ProximaCita proximaCita;
+    protected Fecha proximaCita;
 
     public Usuario(UsuarioId usuarioId, Fecha fechaDeCreacion){
         super(usuarioId);
@@ -35,7 +31,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         return usuario;
     }
 
-    public void agendarProximaCita(ProximaCita proximaCita){
+    public void agendarProximaCita(Fecha proximaCita){
         appendChange(new ProximaCitaAgendada(proximaCita)).apply();
     }
 

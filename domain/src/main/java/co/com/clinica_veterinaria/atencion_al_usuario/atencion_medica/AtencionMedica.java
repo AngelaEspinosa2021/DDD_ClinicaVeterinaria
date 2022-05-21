@@ -2,7 +2,6 @@ package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -15,7 +14,8 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
     protected Fecha fechaDeAtencion;
     protected TipoDeAtencion tipoDeAtencion;
     protected Estado estado;
-    protected ProximaCita proximaCita;
+    protected Fecha proximaCita;
+    protected Fecha fechaDeFinalizacion;
     protected Medico medico;
     protected Urgencia urgencia;
     protected CitaProgramada citaProgramada;
@@ -37,7 +37,7 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
         return atencionMedica;
     }
 
-    public void finalizarAtencion(ProximaCita proximaCita){
+    public void finalizarAtencion(Fecha proximaCita){
         appendChange(new AtencionFinalizada(usuarioId, proximaCita)).apply();
     }
 
