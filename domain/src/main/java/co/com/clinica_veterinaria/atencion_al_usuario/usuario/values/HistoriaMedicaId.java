@@ -4,10 +4,6 @@ import co.com.sofka.domain.generic.Identity;
 
 public class HistoriaMedicaId extends Identity {
 
-    public HistoriaMedicaId(){
-
-    }
-
     public HistoriaMedicaId(String id){
         super(id);
     }

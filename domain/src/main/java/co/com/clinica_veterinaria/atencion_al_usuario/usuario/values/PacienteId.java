@@ -4,10 +4,6 @@ import co.com.sofka.domain.generic.Identity;
 
 public class PacienteId extends Identity {
 
-    private PacienteId(){
-
-    }
-
     public PacienteId(String id){
         super(id);
     }

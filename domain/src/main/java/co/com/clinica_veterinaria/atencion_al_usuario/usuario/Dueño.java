@@ -26,13 +26,4 @@ public class Dueño extends Entity<DueñoId> {
         this.nombreCompleto=Objects.requireNonNull(nombreCompleto);
     }
 
-    public NombreCompleto nombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public DatosDeContacto datosDeContacto() {return datosDeContacto; }
-
-    public Fecha fechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
 }

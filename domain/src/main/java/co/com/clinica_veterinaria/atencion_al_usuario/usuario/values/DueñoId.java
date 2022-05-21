@@ -5,10 +5,6 @@ import co.com.sofka.domain.generic.Identity;
 
 public class DueñoId extends Identity {
 
-    private DueñoId(){
-
-    }
-
     public DueñoId(String id){
         super(id);
     }

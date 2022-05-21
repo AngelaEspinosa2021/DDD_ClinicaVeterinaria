@@ -11,8 +11,6 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 public class Usuario extends AggregateEvent<UsuarioId> {
     protected Fecha fechaDeCreacion;

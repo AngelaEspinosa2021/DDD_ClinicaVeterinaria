@@ -19,11 +19,4 @@ public class Paciente extends Entity<PacienteId> {
         this.nombreCompleto=nombreCompleto;
     }
 
-    public NombreCompleto nombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public Fecha fechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
 }

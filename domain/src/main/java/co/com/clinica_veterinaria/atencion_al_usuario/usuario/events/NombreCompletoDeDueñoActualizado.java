@@ -13,11 +13,6 @@ public class NombreCompletoDeDueñoActualizado extends DomainEvent {
         this.dueñoId = dueñoId;
         this.nombreCompleto = nombreCompleto;
     }
-
-    public DueñoId getDueñoId() {
-        return dueñoId;
-    }
-
     public NombreCompleto getNombreCompleto() {
         return nombreCompleto;
     }

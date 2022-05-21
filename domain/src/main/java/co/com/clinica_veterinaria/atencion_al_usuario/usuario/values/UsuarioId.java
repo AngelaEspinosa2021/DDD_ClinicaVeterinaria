@@ -3,9 +3,6 @@ package co.com.clinica_veterinaria.atencion_al_usuario.usuario.values;
 import co.com.sofka.domain.generic.Identity;
 
 public class UsuarioId extends Identity {
-    private UsuarioId(){
-
-    }
 
     public UsuarioId(String id){
         super(id);
