@@ -40,8 +40,8 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange(new ExamenDeLaborarioSolicitado(examenId,nombre,estado)).apply();
     }
 
-    public void agregarMedicamento(MedicamentoId medicamentoId, Nombre nombre){
-        appendChange( new MedicamentoAgregado(medicamentoId,nombre)).apply();
+    public void agregarMedicamento(MedicamentoId medicamentoId, Nombre nombre, Fecha fechaDeVencimiento){
+        appendChange( new MedicamentoAgregado(medicamentoId,nombre, fechaDeVencimiento)).apply();
     }
 
     public void solicitarHospitalizacion(HospitalizacionId hospitalizacionId,EstadoDeHospitalizacion estadoDeHospitalizacion,Fecha fechaDeIngreso){

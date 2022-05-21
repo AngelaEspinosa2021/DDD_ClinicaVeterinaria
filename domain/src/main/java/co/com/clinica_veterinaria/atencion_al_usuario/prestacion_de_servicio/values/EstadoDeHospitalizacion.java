@@ -4,19 +4,16 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class EstadoDeHospitalizacion implements ValueObject<EstadoDeHospitalizacion.Listado>{
-    private final Listado value;
+public class EstadoDeHospitalizacion implements ValueObject<String>{
+    private final String value;
 
-    public EstadoDeHospitalizacion(Listado value){
+    public EstadoDeHospitalizacion(String value){
         this.value= Objects.requireNonNull(value);
     }
 
     @Override
-    public Listado value() {
+    public String value() {
         return value;
     }
 
-    public enum Listado{
-       INTERNO, ALTA
-   }
-}
+    }

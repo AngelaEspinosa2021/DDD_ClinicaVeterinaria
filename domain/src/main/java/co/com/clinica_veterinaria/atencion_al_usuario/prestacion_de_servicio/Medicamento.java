@@ -9,7 +9,7 @@ public class Medicamento extends Entity<MedicamentoId> {
     protected Nombre nombre;
     protected Fecha fechaDeVencimiento;
 
-    public Medicamento(MedicamentoId medicamentoId, Nombre nombre) {
+    public Medicamento(MedicamentoId medicamentoId, Nombre nombre,Fecha fechaDeVencimiento) {
         super(medicamentoId);
         this.nombre = nombre;
     }
@@ -22,4 +22,7 @@ public class Medicamento extends Entity<MedicamentoId> {
         return nombre;
     }
 
+    public Fecha getFechaDeVencimiento() {
+        return fechaDeVencimiento;
+    }
 }

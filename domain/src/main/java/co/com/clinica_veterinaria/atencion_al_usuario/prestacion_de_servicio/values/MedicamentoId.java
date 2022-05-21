@@ -3,9 +3,6 @@ package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.va
 import co.com.sofka.domain.generic.Identity;
 
 public class MedicamentoId extends Identity {
-    public MedicamentoId(){
-
-    }
 
     public MedicamentoId(String id){
         super(id);

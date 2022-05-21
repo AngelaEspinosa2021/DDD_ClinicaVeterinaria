@@ -25,11 +25,7 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((ExamenDeLaborarioSolicitado event)->{
-            prestacionDeServicio.examenes.add(new ExamenDeLaboratorio(
-                    event.getExamenId(),
-                    event.getNombre(),
-                    event.getEstado()
-            ));
+            prestacionDeServicio.examenes.add(new ExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstado()));
         });
 
         apply((FechaDeAltaDeHospitalizacionActualizada event)->{
@@ -41,7 +37,7 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((MedicamentoAgregado event)->{
-           prestacionDeServicio.medicamentos.add(new Medicamento(event.getMedicamentoId(), event.getNombre()));
+           prestacionDeServicio.medicamentos.add(new Medicamento(event.getMedicamentoId(), event.getNombre(), event.getFechaDeVencimiento()));
         });
 
         apply((NombreDeMedicamentoActualizado event)->{

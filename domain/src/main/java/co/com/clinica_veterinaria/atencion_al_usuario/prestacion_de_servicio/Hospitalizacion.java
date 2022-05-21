@@ -12,7 +12,7 @@ public class Hospitalizacion extends Entity<HospitalizacionId> {
     protected EstadoDeHospitalizacion estadoDeHospitalizacion;
     protected Fecha fechaDeIngreso;
     protected Fecha fechaDeAlta;
-    protected List<Observacion> observacionesHospitalizacion;
+    protected Observacion observacion;
 
 
     public Hospitalizacion(HospitalizacionId hospitalizacionId,EstadoDeHospitalizacion estadoDeHospitalizacion,Fecha fechaDeIngreso) {
@@ -30,7 +30,7 @@ public class Hospitalizacion extends Entity<HospitalizacionId> {
     }
 
     public void agregarObservacion(Observacion observacion){
-        this.observacionesHospitalizacion.add(observacion);
+        this.observacion=observacion;
     }
 
     public EstadoDeHospitalizacion estadoDeHospitalizacion() {
@@ -45,7 +45,5 @@ public class Hospitalizacion extends Entity<HospitalizacionId> {
         return fechaDeAlta;
     }
 
-    public List<Observacion> observacionesHospitalizacion() {
-        return observacionesHospitalizacion;
-    }
+    public Observacion getObservacion() {return observacion;}
 }

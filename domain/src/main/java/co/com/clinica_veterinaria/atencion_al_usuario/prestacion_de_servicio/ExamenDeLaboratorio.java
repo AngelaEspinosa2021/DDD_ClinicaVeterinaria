@@ -29,20 +29,8 @@ public class ExamenDeLaboratorio extends Entity<ExamenId> {
         this.resultados=resultados;
     }
 
-    public void actualizarFechaDeRealizacion(Fecha fechaRealizacion){
-        this.resultados=resultados;
-    }
-
     public Nombre nombre() {
         return nombre;
-    }
-
-    public Fecha fechaRealizacion() {
-        return fechaRealizacion;
-    }
-
-    public Resultados resultados() {
-        return resultados;
     }
 
     public Estado estado() {
