@@ -34,30 +34,14 @@ public class UsuarioEventChange extends EventChange {
            usuario.dueño.actualizarNombreCompleto(event.getNombreCompleto());
         });
 
-        apply((DatosDeContactoDeDueñoActualizados event)->{
-           usuario.dueño.actualizarDatosDeContacto(event.getDatosDeContacto());
-        });
-
         apply((NombreCompletoPacienteActualizado event)->{
             usuario.paciente.actualizarNombreCompleto(event.getNombreCompleto());
-        });
-
-        apply((MedicoDeHistoriaMedicaAsociado event)-> {
-            var funcion = usuario.getHistoriaMedicaById(event.getHistoriaMedicaId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de historia medcia"));
-            funcion.asociarMedico(event.getInformacionDeMedico());
         });
 
         apply((ObservacionDeHistoriaMedicaAgregada event)-> {
             var funcion = usuario.getHistoriaMedicaById(event.getHistoriaMedicaId())
                     .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de historia medcia"));
             funcion.agregarObservacion(event.getObservacion());
-        });
-
-        apply((DescripcionDeHistoriaMedicaActualizada event)->{
-            var funcion = usuario.getHistoriaMedicaById(event.getHistoriaMedicaId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de historia medcia"));
-            funcion.actualizarDescripcion(event.getDescripcion());
         });
 
     }

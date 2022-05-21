@@ -48,14 +48,6 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange( new HistoriaMedicaCreada(historiaMedicaId,fecha,descripcion));
     }
 
-    public void actualizarFechaDeCreacion(Fecha fechaDeCreacion){
-        appendChange( new FechaDeCreacionActualizada(fechaDeCreacion)).apply();
-    }
-
-    public void asociarMedicoAHistoriaMedica(HistoriaMedicaId historiaMedicaId, InformacionDeMedico informacionDeMedico){
-        appendChange(new MedicoDeHistoriaMedicaAsociado(historiaMedicaId,informacionDeMedico)).apply();
-    }
-
     public void actualizarNombreCompletoDePaciente(PacienteId pacienteId, NombreCompleto nombreCompleto){
         appendChange( new NombreCompletoPacienteActualizado(pacienteId,nombreCompleto)).apply();
     }
