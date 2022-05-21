@@ -18,7 +18,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Fecha fechaDeCreacion;
     protected Dueño dueño;
     protected Paciente paciente;
-    protected Set<HistoriaMedica> historiasMedicas;
+    protected HistoriaMedica historiaMedica;
 
     public Usuario(UsuarioId usuarioId, Fecha fechaDeCreacion){
         super(usuarioId);
@@ -60,11 +60,4 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         appendChange(new ObservacionDeHistoriaMedicaAgregada(historiaMedicaId,observacion)).apply();
     }
 
-    protected Optional<HistoriaMedica> getHistoriaMedicaById(HistoriaMedicaId historiaMedicaId){
-        return historiasMedicas().stream().filter(funcion -> funcion.identity().equals(historiaMedicaId)).findFirst();
-    }
-
-    public Set<HistoriaMedica> historiasMedicas() {
-        return historiasMedicas;
-    }
 }

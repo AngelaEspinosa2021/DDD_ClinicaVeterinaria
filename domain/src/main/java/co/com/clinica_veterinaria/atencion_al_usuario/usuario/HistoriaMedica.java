@@ -11,9 +11,8 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
 
     protected Fecha fecha;
     protected Descripcion descripcion;
-    protected List<Observacion> observaciones;
+    protected Observacion observacion;
     protected InformacionDeMedico informacionDelMedico;
-    protected TipoAtencion tipoAtencion;
 
 
 
@@ -23,13 +22,7 @@ public class HistoriaMedica extends Entity<HistoriaMedicaId> {
         this.descripcion=descripcion;
     }
 
-    public void asociarMedico(InformacionDeMedico informacionDelMedico){
-        this.informacionDelMedico=informacionDelMedico;
-    }
-
-    public void agregarObservacion(Observacion observacion){
-        this.observaciones.add(observacion);
-    }
+    public void agregarObservacion(Observacion observacion){this.observacion=observacion;}
 
     public Fecha fecha() {
         return fecha;

@@ -9,7 +9,6 @@ public class UsuarioEventChange extends EventChange {
     public UsuarioEventChange(Usuario usuario) {
         apply((UsuarioCreado event)->{
             usuario.fechaDeCreacion=event.getFechaDeCreacion();
-            usuario.historiasMedicas= new HashSet<>();
         });
 
         apply((PacienteCreado event)->{
@@ -21,13 +20,7 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((HistoriaMedicaCreada event)->{
-            var funcion = usuario.getHistoriaMedicaById(event.getHistoriaMedicaId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de historia medcia"));
-            usuario.historiasMedicas.add(new HistoriaMedica(
-               event.getHistoriaMedicaId(),
-               event.getFecha(),
-               event.getDescripcion()
-            ));
+            usuario.historiaMedica = new HistoriaMedica(event.getHistoriaMedicaId(),event.getFecha(),event.getDescripcion());
         });
 
         apply((NombreCompletoDeDueñoActualizado event)->{
@@ -39,9 +32,7 @@ public class UsuarioEventChange extends EventChange {
         });
 
         apply((ObservacionDeHistoriaMedicaAgregada event)-> {
-            var funcion = usuario.getHistoriaMedicaById(event.getHistoriaMedicaId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de historia medcia"));
-            funcion.agregarObservacion(event.getObservacion());
+            usuario.historiaMedica.agregarObservacion(event.getObservacion());
         });
 
     }
