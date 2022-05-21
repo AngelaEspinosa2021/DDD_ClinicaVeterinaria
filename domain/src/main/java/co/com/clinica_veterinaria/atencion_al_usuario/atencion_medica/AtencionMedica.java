@@ -3,33 +3,45 @@ package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.Usuario;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Descripcion;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMedicaId;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.*;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.PrestacionDeServicio;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
+
+import java.util.List;
 
 public class AtencionMedica extends AggregateEvent<AtencionId> {
+    protected UsuarioId usuarioId;
     protected Fecha fechaDeAtencion;
     protected TipoDeAtencion tipoDeAtencion;
     protected Estado estado;
-    protected Usuario usuario;
+    protected ProximaCita proximaCita;
     protected Medico medico;
     protected Urgencia urgencia;
-    protected PrestacionDeServicio prestacionDeServicio;
     protected CitaProgramada citaProgramada;
 
 
-    public AtencionMedica(AtencionId atencionId,UsuarioId usuarioId, Fecha fechaDeAtencion,TipoDeAtencion tipoDeAtencion,Estado estado) {
+    public AtencionMedica(AtencionId atencionId,UsuarioId usuarioId,Fecha fechaDeAtencion,TipoDeAtencion tipoDeAtencion) {
         super(atencionId);
-        appendChange( new AtencionCreada(usuarioId,fechaDeAtencion,tipoDeAtencion,estado)).apply();
+        appendChange( new AtencionCreada(fechaDeAtencion,tipoDeAtencion, usuarioId)).apply();
     }
 
     private AtencionMedica(AtencionId atencionId){
         super(atencionId);
         subscribe(new AtencionMedicaEventChange(this));
+    }
+
+    public static AtencionMedica from(AtencionId atencionId, List<DomainEvent> events){
+        var atencionMedica = new AtencionMedica(atencionId);
+        events.forEach(atencionMedica::applyEvent);
+        return atencionMedica;
+    }
+
+    public void finalizarAtencion(ProximaCita proximaCita){
+        appendChange(new AtencionFinalizada(usuarioId, proximaCita)).apply();
     }
 
     public void agregarMedico(MedicoId medicoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento){

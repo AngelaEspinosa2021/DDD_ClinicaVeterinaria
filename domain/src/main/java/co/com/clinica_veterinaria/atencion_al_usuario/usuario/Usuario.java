@@ -17,6 +17,7 @@ public class Usuario extends AggregateEvent<UsuarioId> {
     protected Dueño dueño;
     protected Paciente paciente;
     protected HistoriaMedica historiaMedica;
+    protected ProximaCita proximaCita;
 
     public Usuario(UsuarioId usuarioId, Fecha fechaDeCreacion){
         super(usuarioId);
@@ -32,6 +33,10 @@ public class Usuario extends AggregateEvent<UsuarioId> {
         var usuario = new Usuario(usuarioId);
         events.forEach(usuario::applyEvent);
         return usuario;
+    }
+
+    public void agendarProximaCita(ProximaCita proximaCita){
+        appendChange(new ProximaCitaAgendada(proximaCita)).apply();
     }
 
     public void agregarDueño(DueñoId dueñoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento){

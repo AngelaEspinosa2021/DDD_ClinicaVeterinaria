@@ -1,6 +1,7 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
 import co.com.sofka.domain.generic.EventChange;
 
 import java.util.HashSet;
@@ -9,6 +10,11 @@ public class UsuarioEventChange extends EventChange {
     public UsuarioEventChange(Usuario usuario) {
         apply((UsuarioCreado event)->{
             usuario.fechaDeCreacion=event.getFechaDeCreacion();
+            usuario.proximaCita=new ProximaCita("");
+        });
+
+        apply((ProximaCitaAgendada event)->{
+            usuario.proximaCita=event.getProximaCita();
         });
 
         apply((PacienteCreado event)->{

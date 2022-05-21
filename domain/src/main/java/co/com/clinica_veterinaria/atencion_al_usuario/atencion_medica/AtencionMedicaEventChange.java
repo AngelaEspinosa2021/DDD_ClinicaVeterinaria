@@ -3,7 +3,9 @@ package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.HistoriaMedica;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.Usuario;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.ProximaCita;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.EventChange;
 
@@ -14,7 +16,14 @@ public class AtencionMedicaEventChange extends EventChange {
         apply((AtencionCreada event)->{
             atencionMedica.fechaDeAtencion=event.getFechaDeAtencion();
             atencionMedica.tipoDeAtencion=event.getTipoDeAtencion();
-            atencionMedica.estado=event.getEstado();
+            atencionMedica.estado=new Estado(Estado.Estados.POR_INICIAR);
+            atencionMedica.proximaCita=new ProximaCita("");
+            atencionMedica.usuarioId=event.getUsuarioId();
+        });
+
+        apply((AtencionFinalizada event)->{
+            atencionMedica.proximaCita=event.getProximaCita();
+            atencionMedica.estado=new Estado(Estado.Estados.FINALIZADO);
         });
 
         apply((MedicoAgregado event)->{
@@ -41,9 +50,9 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.citaProgramada.fechaCita=event.getFechaCita();
         });
 
-        apply((ObservacionDeHistoriaMedicaDeUsuarioAgregada event)->{
+        /*apply((ObservacionDeHistoriaMedicaDeUsuarioAgregada event)->{
             atencionMedica.usuario.agregarObservacionAHistoriaMedica(event.getHistoriaMedicaId(),event.getObservacion());
-        });
+        });*/
 
         apply((NombreDeMedicoActualizado event)->{
             atencionMedica.medico.actualizarNombreCompleto(event.getNombreCompleto());
@@ -61,7 +70,7 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.actualizarEstadoDeAtencion(event.getEstado());
         });
 
-        apply((ServicioDeExamenDeLaboratorioSolicitado event)->{
+       /* apply((ServicioDeExamenDeLaboratorioSolicitado event)->{
             atencionMedica.prestacionDeServicio.solicitarExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstado());
         });
 
@@ -71,6 +80,6 @@ public class AtencionMedicaEventChange extends EventChange {
 
         apply((ServicioDeMedicamentoSolicitado event)->{
            atencionMedica.prestacionDeServicio.agregarMedicamento(event.getMedicamentoId(), event.getNombre());
-        });
+        });*/
     }
 }

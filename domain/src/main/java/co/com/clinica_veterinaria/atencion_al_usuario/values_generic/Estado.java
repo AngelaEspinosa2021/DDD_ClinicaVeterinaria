@@ -18,6 +18,6 @@ public class Estado implements ValueObject<Estado.Estados> {
     }
 
     public enum Estados{
-        ENPROGRESO, TERMINADA
+        ENPROGRESO, TERMINADA, FINALIZADO, POR_INICIAR
     }
 }
