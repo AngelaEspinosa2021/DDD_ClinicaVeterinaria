@@ -3,15 +3,15 @@ package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.va
 import co.com.sofka.domain.generic.Identity;
 
 public class ServicioId extends Identity {
-    private ServicioId(){
+    public ServicioId(){
 
     }
 
-    private ServicioId(String id){
+    public ServicioId(String id){
         super(id);
     }
 
-    private static ServicioId of(String id){
+    public static ServicioId of(String id){
         return new ServicioId(id);
     }
 }

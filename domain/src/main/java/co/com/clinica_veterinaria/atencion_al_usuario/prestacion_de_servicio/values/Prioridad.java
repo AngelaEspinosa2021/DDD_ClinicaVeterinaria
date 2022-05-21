@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class Prioridad implements ValueObject<Prioridad.Prioridades> {
+public class Prioridad implements ValueObject<String> {
 
     private final Prioridades value;
 
@@ -14,8 +14,8 @@ public class Prioridad implements ValueObject<Prioridad.Prioridades> {
     }
 
     @Override
-    public Prioridades value() {
-        return value;
+    public String value() {
+        return value.name();
     }
 
     public enum Prioridades{
