@@ -1,7 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.AgregarPaciente;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.PacienteCreado;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;

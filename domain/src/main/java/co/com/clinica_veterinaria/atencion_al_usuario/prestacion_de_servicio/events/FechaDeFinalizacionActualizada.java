@@ -1,5 +1,6 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;
 

@@ -1,4 +1,4 @@
-package co.com.clinica_veterinaria.atencion_al_usuario.usuario.events;
+package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.DomainEvent;

@@ -1,10 +1,9 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.ActualizarNombreCompletoDePaciente;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.AgregarPaciente;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.NombreCompletoPacienteActualizado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.PacienteCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.NombreCompletoPacienteActualizado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.PacienteCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.PacienteId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
@@ -23,7 +22,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

@@ -1,7 +1,7 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.CrearUsuario;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -9,7 +9,6 @@ import co.com.sofka.business.support.RequestCommand;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import java.time.LocalDate;
 

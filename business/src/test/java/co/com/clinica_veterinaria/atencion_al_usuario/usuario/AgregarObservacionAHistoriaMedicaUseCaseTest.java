@@ -1,13 +1,14 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.AgregarObservacionAHistoriaMedica;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.HistoriaMedicaCreada;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.ObservacionDeHistoriaMedicaAgregada;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Descripcion;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMedicaId;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.PacienteId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
@@ -23,7 +24,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
