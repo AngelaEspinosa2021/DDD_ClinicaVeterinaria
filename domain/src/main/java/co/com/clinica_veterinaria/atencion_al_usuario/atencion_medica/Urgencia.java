@@ -23,7 +23,5 @@ public class Urgencia extends Entity<UrgenciaId> {
         return observacion;
     }
 
-    public Triage triage() {
-        return triage;
-    }
+    public Triage getTriage() {return triage;}
 }

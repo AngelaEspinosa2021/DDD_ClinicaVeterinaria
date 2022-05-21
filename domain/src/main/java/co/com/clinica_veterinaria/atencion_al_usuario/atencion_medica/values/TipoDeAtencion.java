@@ -4,20 +4,17 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class TipoDeAtencion implements ValueObject<TipoDeAtencion.Atenciones> {
+public class TipoDeAtencion implements ValueObject<String> {
 
-    private final Atenciones value;
+    private final String value;
 
-    public TipoDeAtencion(Atenciones value) {
-        this.value= Objects.requireNonNull(value);
+    public TipoDeAtencion(String value) {
+        this.value = Objects.requireNonNull(value);
     }
 
     @Override
-    public Atenciones value(){
+    public String value() {
         return value;
     }
 
-    public enum Atenciones{
-        URGENCIA, CITAPRIORITARIA
-    }
 }

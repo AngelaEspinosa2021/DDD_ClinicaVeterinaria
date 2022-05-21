@@ -4,15 +4,11 @@ import co.com.sofka.domain.generic.Identity;
 
 public class UrgenciaId extends Identity {
 
-    private UrgenciaId(){
-
-    }
-
-    private UrgenciaId(String id){
+    public UrgenciaId(String id){
         super(id);
     }
 
-    private static UrgenciaId of(String id){
+    public static UrgenciaId of(String id){
         return new UrgenciaId(id);
     }
 }

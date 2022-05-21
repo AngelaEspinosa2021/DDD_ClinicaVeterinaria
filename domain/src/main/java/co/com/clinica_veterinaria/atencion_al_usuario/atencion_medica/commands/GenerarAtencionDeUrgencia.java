@@ -5,12 +5,12 @@ import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.Urg
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.Command;
 
-public class SolicitarAtencionDeUrgencia extends Command {
+public class GenerarAtencionDeUrgencia extends Command {
     private final UrgenciaId urgenciaId;
     private final Observacion observacion;
     private final Triage triage;
 
-    public SolicitarAtencionDeUrgencia(UrgenciaId urgenciaId, Observacion observacion, Triage triage) {
+    public GenerarAtencionDeUrgencia(UrgenciaId urgenciaId, Observacion observacion, Triage triage) {
         this.urgenciaId = urgenciaId;
         this.observacion = observacion;
         this.triage = triage;

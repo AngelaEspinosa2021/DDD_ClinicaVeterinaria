@@ -5,20 +5,17 @@ import co.com.sofka.domain.generic.ValueObject;
 import javax.management.loading.ClassLoaderRepository;
 import java.util.Objects;
 
-public class Triage implements ValueObject<Triage.Clasificacion> {
+public class Triage implements ValueObject<String> {
 
-    private final Clasificacion value;
+    private final String value;
 
-    public Triage(Clasificacion value){
+    public Triage(String value){
         this.value= Objects.requireNonNull(value);
     }
 
     @Override
-    public Clasificacion value() {
+    public String value() {
         return value;
     }
 
-    public enum Clasificacion{
-        SIN_URGENCIA,URGENCIA_MENOR,URGENCIA,EMERGENCIA,RESUCITACION
-    }
 }

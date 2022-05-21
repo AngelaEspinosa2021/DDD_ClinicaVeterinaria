@@ -61,7 +61,7 @@ class FinalizarAtencionUseCaseTest {
     public List<DomainEvent> history(){
         var usuarioId = new UsuarioId("002");
         var fechaDeAtencion  = new Fecha(LocalDate.now());
-        var tipodeAtencion = new TipoDeAtencion(TipoDeAtencion.Atenciones.URGENCIA);
+        var tipodeAtencion = new TipoDeAtencion("URGENCIA");
         var event = new AtencionCreada(
                 fechaDeAtencion,
                 tipodeAtencion,
