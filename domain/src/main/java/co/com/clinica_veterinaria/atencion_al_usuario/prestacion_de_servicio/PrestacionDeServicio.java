@@ -15,9 +15,11 @@ import java.util.Set;
 public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     protected Prioridad prioridad;
     protected Fecha fechaDeSolicitud;
+    protected Fecha fechaDeFinalizacion;
     protected Set<ExamenDeLaboratorio> examenes;
     protected Set<Medicamento> medicamentos;
     protected Hospitalizacion hospitalizacion;
+
 
 
     public PrestacionDeServicio(ServicioId servicioId, Prioridad prioridad,Fecha fechaDeSolicitud) {
@@ -34,6 +36,11 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         var prestacionDeServicio = new PrestacionDeServicio(servicioId);
         events.forEach(prestacionDeServicio::applyEvent);
         return prestacionDeServicio;
+    }
+
+    public void actualizarFechaDeFinalizacion(Fecha fechaDeFinalizacion){
+        appendChange(new FechaDeFinalizacionActualizada(fechaDeFinalizacion)).apply();
+
     }
 
     public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre,Estado estado){

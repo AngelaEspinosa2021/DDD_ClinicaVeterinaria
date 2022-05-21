@@ -2,6 +2,7 @@ package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.*;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.*;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.sofka.domain.generic.AggregateEvent;
@@ -11,6 +12,7 @@ import java.util.List;
 
 public class AtencionMedica extends AggregateEvent<AtencionId> {
     protected UsuarioId usuarioId;
+    protected ServicioId servicioId;
     protected Fecha fechaDeAtencion;
     protected TipoDeAtencion tipoDeAtencion;
     protected Estado estado;
@@ -39,6 +41,10 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
 
     public void finalizarAtencion(Fecha proximaCita){
         appendChange(new AtencionFinalizada(usuarioId, proximaCita)).apply();
+    }
+
+    public void actualizarFechaDeFinalizacionPrestacionDeServicio(Fecha fechaDeFinalizacion){
+        appendChange(new FechaDeFinalizacionPrestacionDeServicioActualizada(servicioId,fechaDeFinalizacion)).apply();
     }
 
     public void agregarMedico(MedicoId medicoId, NombreCompleto nombreCompleto, DatosDeContacto datosDeContacto, Fecha fechaDeNacimiento){
