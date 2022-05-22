@@ -1,4 +1,4 @@
-package co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events;
+package co.com.clinica_veterinaria.atencion_al_usuario.usuario.events;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.NombreCompleto;

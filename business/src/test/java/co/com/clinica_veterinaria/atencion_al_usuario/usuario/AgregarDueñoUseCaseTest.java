@@ -1,8 +1,8 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.AgregarDueño;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.DueñoCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.DueñoCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.DueñoId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.DatosDeContacto;

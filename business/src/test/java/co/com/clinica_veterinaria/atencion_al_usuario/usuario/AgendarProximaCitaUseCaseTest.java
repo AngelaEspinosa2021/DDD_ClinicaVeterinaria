@@ -1,8 +1,8 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.AtencionFinalizada;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.ProximaCitaAgendada;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.ProximaCitaAgendada;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -48,7 +48,7 @@ class AgendarProximaCitaUseCaseTest {
                 .getDomainEvents();
 
         var proximaCitaAgendada = (ProximaCitaAgendada)events.get(0);
-        Assertions.assertEquals("2022-06-17",proximaCitaAgendada.getProximaCita().value());
+        Assertions.assertEquals(LocalDate.parse("2022-06-17"),proximaCitaAgendada.getProximaCita().value());
         Mockito.verify(repository).getEventsBy(usuarioId.value());
     }
 

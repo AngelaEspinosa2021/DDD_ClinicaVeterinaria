@@ -1,10 +1,9 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.usuario;
 
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.AgregarObservacionAHistoriaMedica;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.HistoriaMedicaCreada;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.ObservacionDeHistoriaMedicaAgregada;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.commands.events.UsuarioCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.*;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.HistoriaMedicaCreada;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.ObservacionDeHistoriaMedicaAgregada;
+import co.com.clinica_veterinaria.atencion_al_usuario.usuario.events.UsuarioCreado;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.Descripcion;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.HistoriaMedicaId;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
