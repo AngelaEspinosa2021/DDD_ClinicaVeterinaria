@@ -42,10 +42,6 @@ public class PrestacionDeServicioEventChange extends EventChange {
             prestacionDeServicio.medicamento.actualizarNombre(event.getNombre());
         });
 
-        apply((PrioridadActualizada event)->{
-            prestacionDeServicio.actualizarPrioridad(event.getPrioridad());
-        });
-
         apply((ObservacionDeHospitalizacionAgregada event)->{
             prestacionDeServicio.hospitalizacion.agregarObservacion(event.getObservacion());
         });
