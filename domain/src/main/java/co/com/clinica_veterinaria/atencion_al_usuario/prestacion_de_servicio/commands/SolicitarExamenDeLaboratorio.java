@@ -2,22 +2,28 @@ package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.co
 
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ExamenId;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Resultados;
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Command;
 
 public class SolicitarExamenDeLaboratorio extends Command {
+    private final ServicioId servicioId;
     private final ExamenId examenId;
     private final Nombre nombre;
     private final Fecha fechaRealizacion;
    private final Estado estado;
 
-    public SolicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Estado estado) {
+    public SolicitarExamenDeLaboratorio(ServicioId servicioId, ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Estado estado) {
+        this.servicioId = servicioId;
         this.examenId = examenId;
         this.nombre = nombre;
         this.fechaRealizacion = fechaRealizacion;
         this.estado = estado;
+    }
+
+    public ServicioId getServicioId() {
+        return servicioId;
     }
 
     public ExamenId getExamenId() {

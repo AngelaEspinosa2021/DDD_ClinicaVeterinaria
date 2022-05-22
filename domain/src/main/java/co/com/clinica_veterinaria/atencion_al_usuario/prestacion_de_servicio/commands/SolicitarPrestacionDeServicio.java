@@ -6,9 +6,9 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Command;
 
 public class SolicitarPrestacionDeServicio extends Command {
-    protected final ServicioId servicioId;
-    protected final Prioridad prioridad;
-    protected final Fecha fechaDeSolicitud;
+    private final ServicioId servicioId;
+    private final Prioridad prioridad;
+    private final Fecha fechaDeSolicitud;
 
     public SolicitarPrestacionDeServicio(ServicioId servicioId, Prioridad prioridad, Fecha fechaDeSolicitud) {
         this.servicioId = servicioId;
