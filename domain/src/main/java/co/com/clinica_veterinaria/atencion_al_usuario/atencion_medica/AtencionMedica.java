@@ -59,20 +59,12 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
         appendChange( new AtencionDeCitaProgramadaGenerada(citaId,observacion,fechaCita)).apply();
     }
 
-    public void actualizarDatosDeContactoDeMedico(MedicoId medicoId, DatosDeContacto datosDeContacto){
-        appendChange(new DatosDeContactoDeMedicoActualizados(medicoId,datosDeContacto)).apply();
-    }
-
     public void actualizarNombreDeMedico(MedicoId medicoId, NombreCompleto nombreCompleto){
         appendChange(new NombreDeMedicoActualizado(medicoId,nombreCompleto)).apply();
     }
 
     public void actualizarFechaDeCitaProgramada(CitaId citaId, FechaCita fechaCita){
         appendChange( new FechaDeCitaProgramadaActualizada(citaId,fechaCita)).apply();
-    }
-
-    public void actualizarObservacionesDeCitaProgramada(CitaId citaId, Observacion observacion){
-        appendChange( new ObservacionesDeCitaProgramadaActualizada(citaId,observacion)).apply();
     }
 
     public void actualizarObservacionDeUrgencia(UrgenciaId urgenciaId, Observacion observacion){

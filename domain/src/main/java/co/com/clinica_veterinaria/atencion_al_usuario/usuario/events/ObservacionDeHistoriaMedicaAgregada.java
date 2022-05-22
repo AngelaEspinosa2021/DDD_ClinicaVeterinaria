@@ -14,10 +14,6 @@ public class ObservacionDeHistoriaMedicaAgregada extends DomainEvent {
         this.observacion = observacion;
     }
 
-    public HistoriaMedicaId getHistoriaMedicaId() {
-        return historiaMedicaId;
-    }
-
     public Observacion getObservacion() {
         return observacion;
     }

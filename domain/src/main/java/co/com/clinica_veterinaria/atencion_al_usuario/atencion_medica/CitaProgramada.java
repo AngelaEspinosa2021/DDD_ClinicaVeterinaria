@@ -19,11 +19,7 @@ public class CitaProgramada extends Entity<CitaId> {
         this.fechaCita=fechaCita;
     }
 
-    public void actualizarObservacion(Observacion observacion){
-        this.observacion=observacion;
-    }
-
-    public Observacion observacion() {
+   public Observacion observacion() {
         return observacion;
     }
 

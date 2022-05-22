@@ -41,10 +41,6 @@ public class AtencionMedicaEventChange extends EventChange {
             atencionMedica.citaProgramada = new CitaProgramada(event.getCitaId(), event.getObservacion(), event.getFechaCita());
         });
 
-        apply((DatosDeContactoDeMedicoActualizados event)->{
-            atencionMedica.medico.datosDeContacto=event.getDatosDeContacto();
-        });
-
         apply((FechaDeCitaProgramadaActualizada event)->{
             atencionMedica.citaProgramada.fechaCita=event.getFechaCita();
         });
@@ -55,10 +51,6 @@ public class AtencionMedicaEventChange extends EventChange {
 
         apply((ObservacionDeUrgenciaActualizada event)->{
             atencionMedica.urgencia.actualizarObservacion(event.getObservacion());
-        });
-
-        apply((ObservacionesDeCitaProgramadaActualizada event)->{
-            atencionMedica.citaProgramada.actualizarObservacion(event.getObservacion());
         });
 
         apply((EstadoDeAtencionActualizado event)->{

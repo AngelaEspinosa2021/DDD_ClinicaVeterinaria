@@ -14,10 +14,6 @@ public class NombreCompletoPacienteActualizado extends DomainEvent {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public PacienteId getPacienteId() {
-        return pacienteId;
-    }
-
     public NombreCompleto getNombreCompleto() {
         return nombreCompleto;
     }

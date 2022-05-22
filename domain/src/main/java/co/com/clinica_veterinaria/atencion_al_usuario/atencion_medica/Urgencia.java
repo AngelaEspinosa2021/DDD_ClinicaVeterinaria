@@ -15,13 +15,9 @@ public class Urgencia extends Entity<UrgenciaId> {
         this.triage = triage;
     }
 
-    public void actualizarObservacion(Observacion observacion){
-        this.observacion=observacion;
-    }
+    public void actualizarObservacion(Observacion observacion){this.observacion=observacion;}
 
     public Observacion observacion() {
         return observacion;
     }
-
-    public Triage getTriage() {return triage;}
 }

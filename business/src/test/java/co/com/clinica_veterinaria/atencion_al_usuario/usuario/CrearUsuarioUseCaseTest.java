@@ -25,7 +25,7 @@ class CrearUsuarioUseCaseTest {
     public void crearUsuarioHappyPass(){
         //arrange
         UsuarioId usuarioId= UsuarioId.of("001");
-        Fecha fechaDeCreacion = new Fecha(LocalDate.now());
+        Fecha fechaDeCreacion = new Fecha(LocalDate.parse("2022-05-20"));
         var command = new CrearUsuario(usuarioId, fechaDeCreacion);
 
         //act

@@ -18,11 +18,7 @@ public class Medico extends Entity<MedicoId> {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public void actualizarDatosDeContacto(DatosDeContacto datosDeContacto){
-        this.datosDeContacto=datosDeContacto;
-    }
-
-    public void actualizarNombreCompleto(NombreCompleto nombreCompleto){
+   public void actualizarNombreCompleto(NombreCompleto nombreCompleto){
         this.nombreCompleto=nombreCompleto;
     }
 

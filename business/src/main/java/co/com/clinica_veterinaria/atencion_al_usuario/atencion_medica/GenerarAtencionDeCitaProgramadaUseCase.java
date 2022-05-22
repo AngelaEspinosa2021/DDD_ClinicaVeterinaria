@@ -1,2 +1,4 @@
-package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;public class GenerarAtencionDeCitaProgramada {
+package co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica;
+
+public class GenerarAtencionDeCitaProgramadaUseCase {
 }
