@@ -14,7 +14,6 @@ public class PrestacionDeServicioEventChange extends EventChange {
             prestacionDeServicio.prioridad=event.getPrioridad();
             prestacionDeServicio.fechaDeSolicitud=event.getFechaDeSolicitud();
             prestacionDeServicio.estado=new Estado(Estado.Estados.POR_INICIAR);
-            prestacionDeServicio.medicamentos=new HashSet<>();
             prestacionDeServicio.fechaDeFinalizacion= new Fecha(LocalDate.parse("1900-01-01"));
         });
 
@@ -44,13 +43,11 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((MedicamentoAgregado event)->{
-           prestacionDeServicio.medicamentos.add(new Medicamento(event.getMedicamentoId(), event.getNombre(), event.getFechaDeVencimiento()));
+           prestacionDeServicio.medicamento=new Medicamento(event.getMedicamentoId(), event.getNombre(), event.getFechaDeVencimiento());
         });
 
         apply((NombreDeMedicamentoActualizado event)->{
-            var funcion = prestacionDeServicio.getMedicamentoById(event.getMedicamentoId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de medicamento"));
-            funcion.actualizarNombre(event.getNombre());
+            prestacionDeServicio.medicamento.actualizarNombre(event.getNombre());
         });
 
         apply((PrioridadActualizada event)->{

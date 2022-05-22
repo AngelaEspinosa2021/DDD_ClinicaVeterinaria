@@ -19,7 +19,7 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     protected Fecha fechaDeFinalizacion;
     protected Estado estado;
     protected ExamenDeLaboratorio examenDeLaboratorio;
-    protected Set<Medicamento> medicamentos;
+    protected Medicamento medicamento;
     protected Hospitalizacion hospitalizacion;
 
 
@@ -85,10 +85,6 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange( new ObservacionDeHospitalizacionAgregada(hospitalizacionId,observacion)).apply();
     }
 
-    protected Optional<Medicamento> getMedicamentoById(MedicamentoId medicamentoId){
-        return medicamentos().stream().filter(funcion -> funcion.identity().equals(medicamentoId)).findFirst();
-    }
-
     public Prioridad prioridad() {
         return prioridad;
     }
@@ -97,14 +93,11 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         return fechaDeSolicitud;
     }
 
-    public ExamenDeLaboratorio examenDeLaboratorio() {return examenDeLaboratorio;
-    }
-
-    public Set<Medicamento> medicamentos() {
-        return medicamentos;
-    }
+    public ExamenDeLaboratorio examenDeLaboratorio() {return examenDeLaboratorio;}
 
     public Hospitalizacion hospitalizacion() {
         return hospitalizacion;
     }
+
+    public Medicamento getMedicamento() {return medicamento;}
 }
