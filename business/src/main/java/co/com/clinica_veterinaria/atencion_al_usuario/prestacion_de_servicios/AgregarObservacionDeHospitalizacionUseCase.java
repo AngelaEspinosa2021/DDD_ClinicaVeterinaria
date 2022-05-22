@@ -13,4 +13,5 @@ public class AgregarObservacionDeHospitalizacionUseCase extends UseCase<RequestC
         var servicio = PrestacionDeServicio.from(command.getServicioId(), repository().getEventsBy(command.getServicioId().value()));
         servicio.agregarObservacionDeHospitalizacion(command.getHospitalizacionId(), command.getObservacion());
         emit().onResponse(new ResponseEvents(servicio.getUncommittedChanges()));
+    }
 }

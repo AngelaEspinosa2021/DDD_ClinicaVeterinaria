@@ -21,16 +21,8 @@ public class PrestacionDeServicioEventChange extends EventChange {
             prestacionDeServicio.examenDeLaboratorio.actualizarEstado(event.getEstadoExamen());
         });
 
-        apply((EstadoDeHospitalizacionActualizado event)->{
-            prestacionDeServicio.hospitalizacion.actualizarEstadoDeHospitalizacion(event.getEstadoDeHospitalizacion());
-        });
-
         apply((ExamenDeLaborarioSolicitado event)->{
             prestacionDeServicio.examenDeLaboratorio=new ExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstadoExamen());
-        });
-
-        apply((FechaDeAltaDeHospitalizacionActualizada event)->{
-            prestacionDeServicio.hospitalizacion.actualizarFechaDeAlta(event.getFechaDeAlta());
         });
 
         apply((FechaDeFinalizacionActualizada event)->{
@@ -52,10 +44,6 @@ public class PrestacionDeServicioEventChange extends EventChange {
 
         apply((PrioridadActualizada event)->{
             prestacionDeServicio.actualizarPrioridad(event.getPrioridad());
-        });
-
-        apply((ResultadosDeExamenDeLaboratorioActualizado event)->{
-            prestacionDeServicio.examenDeLaboratorio.actualizarResultados(event.getResultados());
         });
 
         apply((ObservacionDeHospitalizacionAgregada event)->{

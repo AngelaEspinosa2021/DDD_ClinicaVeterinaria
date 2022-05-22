@@ -69,18 +69,6 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange( new EstadoDeExamenDeLaboratorioActualizado(examenId,estadoExamen)).apply();
     }
 
-    public void actualizarResultadosDeExamenDeLaboratorio(ExamenId examenId, Resultados resultados){
-        appendChange( new ResultadosDeExamenDeLaboratorioActualizado(examenId,resultados)).apply();
-    }
-
-    public void actualizarEstadoDeHospitalizacion(HospitalizacionId hospitalizacionId, EstadoDeHospitalizacion estadoDeHospitalizacion){
-        appendChange( new EstadoDeHospitalizacionActualizado(hospitalizacionId,estadoDeHospitalizacion)).apply();
-    }
-
-    public void actualizarFechaDeAltaDeHospitalizacion(HospitalizacionId hospitalizacionId, Fecha fechaDeAlta){
-        appendChange( new FechaDeAltaDeHospitalizacionActualizada(hospitalizacionId,fechaDeAlta)).apply();
-    }
-
     public void agregarObservacionDeHospitalizacion(HospitalizacionId hospitalizacionId, Observacion observacion){
         appendChange( new ObservacionDeHospitalizacionAgregada(hospitalizacionId,observacion)).apply();
     }

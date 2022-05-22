@@ -12,6 +12,7 @@ public class Medicamento extends Entity<MedicamentoId> {
     public Medicamento(MedicamentoId medicamentoId, Nombre nombre,Fecha fechaDeVencimiento) {
         super(medicamentoId);
         this.nombre = nombre;
+        this.fechaDeVencimiento=fechaDeVencimiento;
     }
 
     public void actualizarNombre(Nombre nombre) {
@@ -22,7 +23,4 @@ public class Medicamento extends Entity<MedicamentoId> {
         return nombre;
     }
 
-    public Fecha getFechaDeVencimiento() {
-        return fechaDeVencimiento;
-    }
 }

@@ -21,28 +21,8 @@ public class Hospitalizacion extends Entity<HospitalizacionId> {
         this.fechaDeIngreso = fechaDeIngreso;
     }
 
-    public void actualizarEstadoDeHospitalizacion(EstadoDeHospitalizacion estadoDeHospitalizacion){
-        this.estadoDeHospitalizacion=estadoDeHospitalizacion;
-    }
-
-    public void actualizarFechaDeAlta(Fecha fechaDeAlta){
-        this.fechaDeAlta=fechaDeAlta;
-    }
-
     public void agregarObservacion(Observacion observacion){
         this.observacion=observacion;
-    }
-
-    public EstadoDeHospitalizacion estadoDeHospitalizacion() {
-        return estadoDeHospitalizacion;
-    }
-
-    public Fecha fechaDeIngreso() {
-        return fechaDeIngreso;
-    }
-
-    public Fecha fechaDeAlta() {
-        return fechaDeAlta;
     }
 
     public Observacion getObservacion() {return observacion;}
