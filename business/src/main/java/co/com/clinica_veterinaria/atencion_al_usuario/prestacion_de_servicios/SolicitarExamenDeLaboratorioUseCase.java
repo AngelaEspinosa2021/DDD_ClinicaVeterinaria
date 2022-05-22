@@ -11,7 +11,7 @@ public class SolicitarExamenDeLaboratorioUseCase extends UseCase<RequestCommand<
     public void executeUseCase(RequestCommand<SolicitarExamenDeLaboratorio> solicitarExamenDeLaboratorioRequestCommand) {
         var command = solicitarExamenDeLaboratorioRequestCommand.getCommand();
         var servicio = PrestacionDeServicio.from(command.getServicioId(), repository().getEventsBy(command.getServicioId().value()));
-        servicio.solicitarExamenDeLaboratorio(command.getExamenId(), command.getNombre(), command.getEstado());
+        servicio.solicitarExamenDeLaboratorio(command.getExamenId(), command.getNombre(),command.getEstadoExamen() );
 
         emit().onResponse(new ResponseEvents(servicio.getUncommittedChanges()));
     }

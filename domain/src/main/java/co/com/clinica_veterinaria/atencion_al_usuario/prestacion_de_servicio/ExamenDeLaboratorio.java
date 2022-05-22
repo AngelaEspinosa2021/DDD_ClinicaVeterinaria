@@ -1,8 +1,8 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.EstadoExamen;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Resultados;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ExamenId;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Entity;
@@ -13,16 +13,16 @@ public class ExamenDeLaboratorio extends Entity<ExamenId> {
     protected Nombre nombre;
     protected Fecha fechaRealizacion;
     protected Resultados resultados;
-    protected Estado estado;
+    protected EstadoExamen estadoExamen;
 
-    public ExamenDeLaboratorio(ExamenId examenId,Nombre nombre,Estado estado) {
+    public ExamenDeLaboratorio(ExamenId examenId,Nombre nombre,EstadoExamen estadoExamen) {
         super(examenId);
         this.nombre = nombre;
-        this.estado = estado;
+        this.estadoExamen = estadoExamen;
     }
 
-    public void actualizarEstado(Estado estado){
-        this.estado= Objects.requireNonNull(estado);
+    public void actualizarEstado(EstadoExamen estadoExamen){
+        this.estadoExamen= Objects.requireNonNull(estadoExamen);
     }
 
     public void actualizarResultados(Resultados resultados){
@@ -33,7 +33,7 @@ public class ExamenDeLaboratorio extends Entity<ExamenId> {
         return nombre;
     }
 
-    public Estado estado() {
-        return estado;
+    public EstadoExamen estadoExamen() {
+        return estadoExamen;
     }
 }

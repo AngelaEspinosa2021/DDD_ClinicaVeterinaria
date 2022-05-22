@@ -9,6 +9,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     protected Fecha fechaDeSolicitud;
     protected Fecha fechaDeFinalizacion;
     protected Estado estado;
-    protected Set<ExamenDeLaboratorio> examenes;
+    protected ExamenDeLaboratorio examenDeLaboratorio;
     protected Set<Medicamento> medicamentos;
     protected Hospitalizacion hospitalizacion;
 
@@ -44,8 +45,8 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
 
     }
 
-    public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre,Estado estado){
-        appendChange(new ExamenDeLaborarioSolicitado(examenId,nombre,estado)).apply();
+    public void solicitarExamenDeLaboratorio(ExamenId examenId, Nombre nombre,EstadoExamen estadoExamen){
+        appendChange(new ExamenDeLaborarioSolicitado(examenId,nombre,estadoExamen)).apply();
     }
 
     public void agregarMedicamento(MedicamentoId medicamentoId, Nombre nombre, Fecha fechaDeVencimiento){
@@ -64,8 +65,8 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange( new NombreDeMedicamentoActualizado(medicamentoId,nombre)).apply();
     }
 
-    public void actualizarEstadoDeExamenDeLaboratorio(ExamenId examenId, Estado estado){
-        appendChange( new EstadoDeExamenDeLaboratorioActualizado(examenId,estado)).apply();
+    public void actualizarEstadoDeExamenDeLaboratorio(ExamenId examenId, EstadoExamen estadoExamen){
+        appendChange( new EstadoDeExamenDeLaboratorioActualizado(examenId,estadoExamen)).apply();
     }
 
     public void actualizarResultadosDeExamenDeLaboratorio(ExamenId examenId, Resultados resultados){
@@ -88,10 +89,6 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         return medicamentos().stream().filter(funcion -> funcion.identity().equals(medicamentoId)).findFirst();
     }
 
-    protected Optional<ExamenDeLaboratorio> getExamenById(ExamenId examenId){
-        return examenes.stream().filter(funcion -> funcion.identity().equals(examenId)).findFirst();
-    }
-
     public Prioridad prioridad() {
         return prioridad;
     }
@@ -100,8 +97,7 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         return fechaDeSolicitud;
     }
 
-    public Set<ExamenDeLaboratorio> examenes() {
-        return examenes;
+    public ExamenDeLaboratorio examenDeLaboratorio() {return examenDeLaboratorio;
     }
 
     public Set<Medicamento> medicamentos() {

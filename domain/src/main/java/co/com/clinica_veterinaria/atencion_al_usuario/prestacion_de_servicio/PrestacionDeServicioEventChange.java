@@ -15,14 +15,11 @@ public class PrestacionDeServicioEventChange extends EventChange {
             prestacionDeServicio.fechaDeSolicitud=event.getFechaDeSolicitud();
             prestacionDeServicio.estado=new Estado(Estado.Estados.POR_INICIAR);
             prestacionDeServicio.medicamentos=new HashSet<>();
-            prestacionDeServicio.examenes=new HashSet<>();
             prestacionDeServicio.fechaDeFinalizacion= new Fecha(LocalDate.parse("1900-01-01"));
         });
 
         apply((EstadoDeExamenDeLaboratorioActualizado event)->{
-            var funcion = prestacionDeServicio.getExamenById(event.getExamenId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de examen medico"));
-            funcion.actualizarEstado(event.getEstado());
+            prestacionDeServicio.examenDeLaboratorio.actualizarEstado(event.getEstadoExamen());
         });
 
         apply((EstadoDeHospitalizacionActualizado event)->{
@@ -30,7 +27,7 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((ExamenDeLaborarioSolicitado event)->{
-            prestacionDeServicio.examenes.add(new ExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstado()));
+            prestacionDeServicio.examenDeLaboratorio=new ExamenDeLaboratorio(event.getExamenId(),event.getNombre(),event.getEstadoExamen());
         });
 
         apply((FechaDeAltaDeHospitalizacionActualizada event)->{
@@ -61,9 +58,7 @@ public class PrestacionDeServicioEventChange extends EventChange {
         });
 
         apply((ResultadosDeExamenDeLaboratorioActualizado event)->{
-            var funcion = prestacionDeServicio.getExamenById(event.getExamenId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra informacion de examen medico"));
-            funcion.actualizarResultados(event.getResultados());
+            prestacionDeServicio.examenDeLaboratorio.actualizarResultados(event.getResultados());
         });
 
         apply((ObservacionDeHospitalizacionAgregada event)->{

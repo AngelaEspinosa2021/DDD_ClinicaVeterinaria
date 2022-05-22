@@ -1,9 +1,9 @@
 package co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.commands;
 
+import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.EstadoExamen;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ExamenId;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Nombre;
 import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.ServicioId;
-import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.domain.generic.Command;
 
@@ -12,14 +12,14 @@ public class SolicitarExamenDeLaboratorio extends Command {
     private final ExamenId examenId;
     private final Nombre nombre;
     private final Fecha fechaRealizacion;
-   private final Estado estado;
+   private final EstadoExamen estadoExamen;
 
-    public SolicitarExamenDeLaboratorio(ServicioId servicioId, ExamenId examenId, Nombre nombre, Fecha fechaRealizacion, Estado estado) {
+    public SolicitarExamenDeLaboratorio(ServicioId servicioId, ExamenId examenId, Nombre nombre, Fecha fechaRealizacion,EstadoExamen estadoExamen) {
         this.servicioId = servicioId;
         this.examenId = examenId;
         this.nombre = nombre;
         this.fechaRealizacion = fechaRealizacion;
-        this.estado = estado;
+        this.estadoExamen = estadoExamen;
     }
 
     public ServicioId getServicioId() {
@@ -38,7 +38,7 @@ public class SolicitarExamenDeLaboratorio extends Command {
         return fechaRealizacion;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public EstadoExamen getEstadoExamen() {
+        return estadoExamen;
     }
 }
