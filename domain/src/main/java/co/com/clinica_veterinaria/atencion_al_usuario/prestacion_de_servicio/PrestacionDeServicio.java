@@ -9,9 +9,6 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 
 public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     protected Prioridad prioridad;
@@ -57,10 +54,6 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
         appendChange( new HospitalizacionSolicitada(hospitalizacionId,estadoDeHospitalizacion,fechaDeIngreso)).apply();
     }
 
-    public void actualizarPrioridad(Prioridad prioridad){
-        appendChange( new PrioridadActualizada(prioridad)).apply();
-    }
-
     public void actualizarNombreDeMedicamento(MedicamentoId medicamentoId, Nombre nombre){
         appendChange( new NombreDeMedicamentoActualizado(medicamentoId,nombre)).apply();
     }
@@ -72,20 +65,4 @@ public class PrestacionDeServicio extends AggregateEvent<ServicioId> {
     public void agregarObservacionDeHospitalizacion(HospitalizacionId hospitalizacionId, Observacion observacion){
         appendChange( new ObservacionDeHospitalizacionAgregada(hospitalizacionId,observacion)).apply();
     }
-
-    public Prioridad prioridad() {
-        return prioridad;
-    }
-
-    public Fecha fechaDeSolicitud() {
-        return fechaDeSolicitud;
-    }
-
-    public ExamenDeLaboratorio examenDeLaboratorio() {return examenDeLaboratorio;}
-
-    public Hospitalizacion hospitalizacion() {
-        return hospitalizacion;
-    }
-
-    public Medicamento getMedicamento() {return medicamento;}
 }

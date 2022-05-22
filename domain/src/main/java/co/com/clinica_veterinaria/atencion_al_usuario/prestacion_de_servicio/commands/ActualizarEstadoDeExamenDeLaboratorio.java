@@ -10,7 +10,7 @@ public class ActualizarEstadoDeExamenDeLaboratorio extends Command {
     private final ExamenId examenId;
     private final EstadoExamen estadoExamen;
 
-    public ActualizarEstadoDeExamenDeLaboratorio(ExamenId examenId, ServicioId servicioId, EstadoExamen estadoExamen) {
+    public ActualizarEstadoDeExamenDeLaboratorio(ServicioId servicioId,ExamenId examenId, EstadoExamen estadoExamen) {
         this.examenId = examenId;
         this.estadoExamen = estadoExamen;
         this.servicioId = servicioId;
