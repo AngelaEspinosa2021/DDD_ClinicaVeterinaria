@@ -23,9 +23,9 @@ public class AtencionMedica extends AggregateEvent<AtencionId> {
     protected CitaProgramada citaProgramada;
 
 
-    public AtencionMedica(AtencionId atencionId,UsuarioId usuarioId,Fecha fechaDeAtencion,TipoDeAtencion tipoDeAtencion) {
+    public AtencionMedica(AtencionId atencionId,UsuarioId usuarioId,Fecha fechaDeAtencion,TipoDeAtencion tipoDeAtencion, Estado estado) {
         super(atencionId);
-        appendChange( new AtencionCreada(fechaDeAtencion,tipoDeAtencion, usuarioId)).apply();
+        appendChange( new AtencionCreada(fechaDeAtencion,tipoDeAtencion, usuarioId, estado)).apply();
     }
 
     private AtencionMedica(AtencionId atencionId){

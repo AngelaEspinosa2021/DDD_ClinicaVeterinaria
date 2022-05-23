@@ -6,9 +6,8 @@ import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.events.Fec
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.services.ActualizarFechaDeFinalizacion;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.AtencionId;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.TipoDeAtencion;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.events.PrestacionDeServicioCreado;
-import co.com.clinica_veterinaria.atencion_al_usuario.prestacion_de_servicio.values.Prioridad;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.business.generic.ServiceBuilder;
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -25,7 +24,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -64,10 +62,11 @@ class ActualizarFechaDeFinalizacionPrestacionDeServicioUseCaseTest {
         var usuarioId = new UsuarioId("002");
         var fechaDeAtencion  = new Fecha(LocalDate.now());
         var tipodeAtencion = new TipoDeAtencion("URGENCIA");
+        var estado = new Estado(Estado.Estados.POR_INICIAR);
         var event = new AtencionCreada(
                 fechaDeAtencion,
                 tipodeAtencion,
-                usuarioId);
+                usuarioId, estado);
         event.setAggregateRootId("001");
         return List.of(event);
     }

@@ -7,6 +7,7 @@ import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.services.C
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.AtencionId;
 import co.com.clinica_veterinaria.atencion_al_usuario.atencion_medica.values.TipoDeAtencion;
 import co.com.clinica_veterinaria.atencion_al_usuario.usuario.values.UsuarioId;
+import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Estado;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.sofka.business.generic.ServiceBuilder;
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -61,10 +62,11 @@ class FinalizarAtencionUseCaseTest {
         var usuarioId = new UsuarioId("002");
         var fechaDeAtencion  = new Fecha(LocalDate.now());
         var tipodeAtencion = new TipoDeAtencion("URGENCIA");
+        var estado = new Estado(Estado.Estados.POR_INICIAR);
         var event = new AtencionCreada(
                 fechaDeAtencion,
                 tipodeAtencion,
-                usuarioId);
+                usuarioId, estado);
         event.setAggregateRootId("001");
         return List.of(event);
     }

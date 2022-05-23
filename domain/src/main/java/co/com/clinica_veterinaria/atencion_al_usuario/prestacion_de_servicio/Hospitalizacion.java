@@ -6,7 +6,6 @@ import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Fecha;
 import co.com.clinica_veterinaria.atencion_al_usuario.values_generic.Observacion;
 import co.com.sofka.domain.generic.Entity;
 
-import java.util.List;
 
 public class Hospitalizacion extends Entity<HospitalizacionId> {
     protected EstadoDeHospitalizacion estadoDeHospitalizacion;

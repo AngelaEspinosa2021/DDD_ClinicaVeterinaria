@@ -36,7 +36,7 @@ class CrearHistoriaMedicaUseCaseTest{
     void crearHistoriaMedica(){
         var usuarioId= UsuarioId.of("001");
         var historiaMedicaId = HistoriaMedicaId.of("012");
-        var fecha = new Fecha(LocalDate.now());
+        var fecha = new Fecha(LocalDate.parse("2022-05-20"));
         var descripcion = new Descripcion("Paciente ingresa por Urgencias por deshidratacion");
         var command = new CrearHistoriaMedica(usuarioId,historiaMedicaId,fecha,descripcion);
 

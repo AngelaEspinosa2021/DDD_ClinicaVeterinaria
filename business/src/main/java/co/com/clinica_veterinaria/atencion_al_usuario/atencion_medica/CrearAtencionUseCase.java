@@ -9,7 +9,7 @@ public class CrearAtencionUseCase extends UseCase<RequestCommand<CrearAtencion>,
     @Override
     public void executeUseCase(RequestCommand<CrearAtencion> crearAtencionRequestCommand) {
         var command = crearAtencionRequestCommand.getCommand();
-        var atencion = new AtencionMedica(command.getAtencionId(), command.getUsuarioId(), command.getFechaDeAtencion(), command.getTipoDeAtencion());
+        var atencion = new AtencionMedica(command.getAtencionId(), command.getUsuarioId(), command.getFechaDeAtencion(), command.getTipoDeAtencion(), command.getEstado());
 
         emit().onResponse(new ResponseEvents(atencion.getUncommittedChanges()));
     }

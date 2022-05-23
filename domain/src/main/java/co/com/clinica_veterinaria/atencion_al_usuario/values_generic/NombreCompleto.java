@@ -18,19 +18,6 @@ public class NombreCompleto implements ValueObject<String> {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof NombreCompleto)) return false;
-        NombreCompleto that = (NombreCompleto) o;
-        return Objects.equals(value, that.value);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
-    }
-
-    @Override
     public String value() {
         return value;
     }

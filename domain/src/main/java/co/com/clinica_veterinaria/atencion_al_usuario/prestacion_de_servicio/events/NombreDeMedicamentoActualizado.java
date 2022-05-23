@@ -14,10 +14,6 @@ public class NombreDeMedicamentoActualizado extends DomainEvent {
         this.nombre = nombre;
     }
 
-    public MedicamentoId getMedicamentoId() {
-        return medicamentoId;
-    }
-
     public Nombre getNombre() {
         return nombre;
     }

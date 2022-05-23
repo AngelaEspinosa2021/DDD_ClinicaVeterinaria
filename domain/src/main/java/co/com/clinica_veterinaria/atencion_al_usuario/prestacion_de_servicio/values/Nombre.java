@@ -9,12 +9,6 @@ public class Nombre implements ValueObject<String> {
 
     public Nombre(String value) {
         this.value = Objects.requireNonNull(value);
-        if (this.value.isBlank()) {
-            new IllegalArgumentException("El Nombre no puede estar vacio.");
-        }
-        if (this.value.length() <= 2) {
-            new IllegalArgumentException("Debe de tener mayor a 4 caracteres.");
-        }
     }
 
     @Override

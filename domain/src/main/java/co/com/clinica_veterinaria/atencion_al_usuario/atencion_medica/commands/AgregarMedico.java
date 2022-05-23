@@ -22,9 +22,7 @@ public class AgregarMedico extends Command {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public AtencionId getAtencionId() {
-        return atencionId;
-    }
+    public AtencionId getAtencionId() {return atencionId;}
 
     public MedicoId getMedicoId() {
         return medicoId;

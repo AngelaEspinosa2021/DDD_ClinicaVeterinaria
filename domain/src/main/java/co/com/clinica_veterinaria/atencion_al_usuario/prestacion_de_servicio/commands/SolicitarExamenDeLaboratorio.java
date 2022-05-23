@@ -34,10 +34,6 @@ public class SolicitarExamenDeLaboratorio extends Command {
         return nombre;
     }
 
-    public Fecha getFechaRealizacion() {
-        return fechaRealizacion;
-    }
-
     public EstadoExamen getEstadoExamen() {
         return estadoExamen;
     }

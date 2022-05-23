@@ -14,10 +14,6 @@ public class EstadoDeExamenDeLaboratorioActualizado extends DomainEvent {
         this.estadoExamen = estadoExamen;
     }
 
-    public ExamenId getExamenId() {
-        return examenId;
-    }
-
     public EstadoExamen getEstadoExamen() {
         return estadoExamen;
     }

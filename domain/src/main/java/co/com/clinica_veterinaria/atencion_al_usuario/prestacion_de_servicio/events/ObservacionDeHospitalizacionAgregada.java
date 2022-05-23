@@ -14,10 +14,6 @@ public class ObservacionDeHospitalizacionAgregada extends DomainEvent {
         this.observacion = observacion;
     }
 
-    public HospitalizacionId getHospitalizacionId() {
-        return hospitalizacionId;
-    }
-
     public Observacion getObservacion() {
         return observacion;
     }
